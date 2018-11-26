@@ -1,0 +1,21 @@
+<div class="vertical-center">  
+  <h1 class="primary">Please login</h1>
+
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm)">
+  <div class="row justify-content-center">
+    <mat-form-field>
+        <input matInput formControlName ="loginUsername" placeholder="Username">
+        <i matSuffix class="material-icons">account_circle</i>
+    </mat-form-field>
+  </div>
+  <div class="row justify-content-center">
+    <mat-form-field>
+        <input matInput formControlName ="loginPassword" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+        <i matSuffix (click)="hide = !hide" class="material-icons">{{hide ? 'visibility' : 'visibility_off'}}</i>
+    </mat-form-field>
+  </div>
+  <button mat-flat-button>Login</button>
+  </form>
+
+  
+</div>

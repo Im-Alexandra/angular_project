@@ -1,0 +1,31 @@
+.button-row button,
+.button-row a {
+  margin-right: 8px;
+}
+
+h3{
+  margin-top: 15px;
+}
+.radio-group {
+  display: inline-flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.radio-button {
+  margin: 5px;
+}
+
+.selected-value {
+  margin: 15px 0;
+}
+
+.info-group{
+  display: inline-flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.primary {
+  color: #4a5eba;
+}

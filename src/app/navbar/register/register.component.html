@@ -1,0 +1,157 @@
+<h1 class="primary">
+  Please register
+</h1>
+
+<div class="container">
+  <mat-vertical-stepper >
+
+<!-- ------------------------------------------- FIRST STEP ------------------------------------------- -->
+    <mat-step>
+      <!-- <form [formGroup]="firstFormGroup"> -->
+        <ng-template matStepLabel>Who are you?</ng-template>
+        <div>
+
+        </div>
+        <mat-radio-group class="radio-group" value="0">
+            <mat-radio-button class="radio-button" value="1">Sitter</mat-radio-button>
+            <mat-radio-button #checkIfOwner class="radio-button" value="0">Owner</mat-radio-button>
+        </mat-radio-group>
+
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+
+      <!-- </form> -->
+    </mat-step>
+
+<!-- ------------------------------------------- SECOND STEP ------------------------------------------- -->
+    <mat-step>
+      <form [formGroup]="secondForm" class="form-example">
+        <ng-template matStepLabel>Personal information</ng-template>
+
+        <div class="row justify-content-center">
+          <mat-form-field class="col-4">
+            <input matInput formControlName ="firstName" placeholder="First name" required>
+            <mat-error *ngIf="firstName.touched && firstName.invalid">
+                <mat-error *ngIf="firstName.errors.required">This field is required.</mat-error>
+                <mat-error *ngIf="firstName.errors.minlength">Minimum length is {{firstName.errors.minlength.requiredLength}} characters.</mat-error>
+            </mat-error>
+          </mat-form-field>
+          
+          <mat-form-field class="col-4">
+              <input matInput formControlName="lastName" placeholder="Last name" required>
+              <mat-error *ngIf="lastName.touched && lastName.invalid">
+                  <mat-error *ngIf="lastName.errors.required">This field is required.</mat-error>
+                  <mat-error *ngIf="lastName.errors.minlength">Minimum length is {{lastName.errors.minlength.requiredLength}} characters.</mat-error>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row justify-content-center">
+          <mat-form-field class="col-4">
+              <input matInput formControlName="username" placeholder="Username" required>
+              <mat-error *ngIf="username.touched && username.invalid">
+                  <mat-error *ngIf="username.errors.required">This field is required.</mat-error>
+                  <mat-error *ngIf="username.errors.minlength">Minimum length is {{username.errors.minlength.requiredLength}} characters.</mat-error>
+                  <mat-error *ngIf="username.errors.cannotContainSpace">Username cannot contain space.</mat-error>
+                  <mat-error *ngIf="username.errors.shouldBeUnique">Username is already taken.</mat-error>
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-4">
+              <input matInput formControlName="email" placeholder="Email" required>
+              <mat-error *ngIf="email.touched && email.invalid">
+                  <mat-error *ngIf="email.errors.required">This field is required.</mat-error>
+                  <mat-error *ngIf="email.errors.email">Type in a valid email.</mat-error>
+              </mat-error>
+          </mat-form-field>
+        </div>
+
+        <div class="row justify-content-center">
+          <mat-form-field class="col-4">
+              <input matInput formControlName="password" placeholder="Password" required>
+              <mat-error *ngIf="password.touched && password.invalid">
+                  <mat-error *ngIf="password.errors.required">This field is required.</mat-error>
+                  <mat-error *ngIf="password.errors.minlength">Minimum length is {{password.errors.minlength.requiredLength}} characters.</mat-error>
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-4">
+              <input matInput placeholder="Repeat password" required>
+          </mat-form-field>
+        </div>
+
+        <div class="row justify-content-center">
+          <mat-form-field class="col-4">
+              <input matInput formControlName="phone" placeholder="Phone">
+              <span matPrefix>+45 </span>
+              <mat-error *ngIf="phone.touched && phone.invalid">
+                  <!-- <mat-error *ngIf="phone.errors.minlength">This field is required.</mat-error> -->
+                  <mat-error *ngIf="phone.errors.isNumber">This field has to be a number.</mat-error>
+              </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="col-4">
+              <input matInput placeholder="Location" required>
+          </mat-form-field>
+        </div>
+
+        <div class="row justify-content-center">
+          <mat-form-field class="col-8">
+              <textarea matInput #description maxlength="200" placeholder="Description" rows="10" cols="3"></textarea>
+              <mat-hint align="end">{{description.value?.length || 0}}/200</mat-hint>
+          </mat-form-field>
+        </div>
+       
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+  <!-- ------------------------------------------- THIRD STEP ------------------------------------------- -->
+    
+    <mat-step *ngIf="checkIfOwner._checked">
+        <!-- <form [formGroup]="thirdFormGroup"> -->
+          <ng-template matStepLabel>Animals</ng-template>
+          <div class="row justify-content-center">
+            <mat-form-field class="col-4">
+                <input matInput placeholder="Name" required>
+            </mat-form-field>
+          
+            <mat-form-field class="col-4">
+                <input matInput [matDatepicker]="picker" placeholder="Birthdate">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="row justify-content-center">
+          <mat-form-field class="col-8">
+              <textarea #specialNeeds matInput placeholder="Schedule and special needs" rows="10" cols="3" required></textarea>
+              <mat-hint align="end">{{specialNeeds.value?.length || 0}}/200</mat-hint>
+          </mat-form-field>
+        </div>
+          
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        <!-- </form> -->
+      </mat-step>
+
+    <!-- ------------------------------------------- LAST STEP ------------------------------------------- -->
+
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      Now you are done, please submit.
+      <div>
+        <button mat-button>Submit</button>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+</div>
+
+<router-outlet></router-outlet>
