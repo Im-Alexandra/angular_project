@@ -1,7 +1,7 @@
-import { AuthService } from './../../auth.service';
+import { AuthService } from './../auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { CustomValidators } from '../../common/custom.validators';
+import { CustomValidators } from '../common/custom.validators';
 import { Router } from '@angular/router';
 
 
@@ -34,7 +34,7 @@ export class LoginComponent {
       this.authService.login().subscribe(val=>{
         console.log(val);
         
-        this.router.navigate(['portal']);
+        this.router.navigate(['index']);
       })
     }
   }
