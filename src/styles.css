@@ -71,7 +71,7 @@ h3{
 /* SITTER LIST */
 
 
-.example-card {
+/* .example-card {
     max-width: 250px;
   }
   
@@ -83,4 +83,12 @@ h3{
   .card-container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  } */
+
+  .card-container{
+    max-width: 900px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
   }
