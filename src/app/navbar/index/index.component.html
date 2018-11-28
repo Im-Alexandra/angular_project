@@ -1,5 +1,6 @@
-<p>
-  index works!
-</p>
-
-<router-outlet></router-outlet>
+<mat-radio-group class="radio-group" value="0">
+  <mat-radio-button #checkIfSitters class="radio-button" value="1">SITTERS</mat-radio-button>
+  <mat-radio-button #checkIfPets class="radio-button" value="0">PETS</mat-radio-button>
+</mat-radio-group>
+<sitter-list *ngIf="checkIfSitters._checked"></sitter-list>
+<pet-list *ngIf="checkIfPets._checked"></pet-list>

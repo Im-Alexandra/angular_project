@@ -27,13 +27,14 @@ export class LoginComponent {
   
   onSubmitLogin(loginForm){
    
-    console.log(loginForm)
+    // console.log(loginForm)
     if (loginForm.valid){
       //call api to verify the login credentials
 
       this.authService.login().subscribe(val=>{
         console.log(val);
-        this.router.navigate(['portal'])
+        
+        this.router.navigate(['portal']);
       })
     }
   }

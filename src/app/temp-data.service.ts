@@ -36,18 +36,18 @@ export class TempDataService {
 
   constructor() { }
 
-  public getSitters() : Sitter[] {
-    return this.sitters;
-  }
+  // public getSitters() : Sitter[] {
+  //   return this.sitters;
+  // }
 
-  public addSitter(sitter: Sitter) {
-    this.sitters.push(sitter);
-    // console.log(this.sitters);
-  }
+  // public addSitter(sitter: Sitter) {
+  //   this.sitters.push(sitter);
+  //   // console.log(this.sitters);
+  // }
 
-  public getSitter(id: string){
-      return this.sitters.find(x => x.sitterId === id);
-  }
+  // public getSitter(id: string){
+  //     return this.sitters.find(x => x.sitterId === id);
+  // }
 
  
 

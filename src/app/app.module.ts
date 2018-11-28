@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { IndexComponent } from './navbar/index/index.component';
-import { ContactComponent } from './navbar/contact/contact.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { LoginComponent } from './navbar/login/login.component';
 import { RegisterComponent } from './navbar/register/register.component';
@@ -25,9 +24,10 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { SitterListComponent } from './navbar/portal/sitter-list/sitter-list.component';
+import { SitterListComponent } from './navbar/index/sitter-list/sitter-list.component';
 import {MatCardModule} from '@angular/material/card';
-
+import { HttpClientModule } from '@angular/common/http';
+import { PetListComponent } from './navbar/index/pet-list/pet-list.component';
 
 
 
@@ -35,7 +35,6 @@ import {MatCardModule} from '@angular/material/card';
   declarations: [
     AppComponent,
     IndexComponent,
-    ContactComponent,
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
@@ -43,7 +42,8 @@ import {MatCardModule} from '@angular/material/card';
     ProfileComponent,
     RegisterSitterComponent,
     RegisterOwnerComponent,
-    SitterListComponent
+    SitterListComponent,
+    PetListComponent
   ],
   imports: [
     BrowserModule,
@@ -62,7 +62,8 @@ import {MatCardModule} from '@angular/material/card';
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
