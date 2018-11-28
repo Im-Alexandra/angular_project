@@ -1,6 +1,46 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<app-navbar></app-navbar>
-<div style="text-align:center"> 
-  <!-- that div makes sure that content below is centered :3 -->
-  <router-outlet></router-outlet>
- </div> 
+<!-- MAIN NAVBAR -->
+<mat-toolbar class="row">
+
+  <div class="col-auto">
+    <button mat-button routerLink="index">
+      <i class="material-icons md-36">pets</i>
+    </button>
+    <button mat-button routerLink="portal">Portal</button>
+  </div>
+
+  <div class="col-auto ml-auto">
+    <button mat-button routerLink="login">Login</button>
+    <button mat-button routerLink="register">Register</button>
+    <button mat-button (click)="sidenav.toggle()">
+      <i class="material-icons md-36">account_circle</i>
+    </button>
+  </div>
+
+</mat-toolbar>
+<!-- MAIN NAVBAR END -->
+
+<!-- SIDEBAR CONTAINER -->
+<mat-sidenav-container class="example-container">
+  <!-- ACTUAL SIDEBAR CONTENT -->
+  <mat-sidenav class="sidebar" #sidenav mode="over" position="end">
+    <p><button (click)="sidenav.toggle()"><i class="material-icons">close</i></button></p>
+    <p>
+
+      <ul>
+        <li>Edit profile</li>
+        <li>My pets</li>
+        <li>Add pet</li>
+      </ul>
+      
+  </mat-sidenav>
+
+  <!-- WEBPAGE CONTENT -->
+  <mat-sidenav-content>
+   
+    <div style="text-align:center"> 
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>
+<!-- SIDEBAR CONTAINER END -->

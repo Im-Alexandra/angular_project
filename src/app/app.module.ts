@@ -25,9 +25,11 @@ import { MatRadioModule } from '@angular/material/radio';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { SitterListComponent } from './navbar/index/sitter-list/sitter-list.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { PetListComponent } from './navbar/index/pet-list/pet-list.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 
 
@@ -63,7 +65,8 @@ import { PetListComponent } from './navbar/index/pet-list/pet-list.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatCardModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]
