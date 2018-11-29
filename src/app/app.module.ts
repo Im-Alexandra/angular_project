@@ -27,6 +27,7 @@ import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { PetListComponent } from './index/pet-list/pet-list.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { PetComponent } from './index/pet-list/pet/pet.component';
 
 
 
@@ -41,7 +42,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     RegisterSitterComponent,
     RegisterOwnerComponent,
     SitterListComponent,
-    PetListComponent
+    PetListComponent,
+    PetComponent
   ],
   imports: [
     BrowserModule,

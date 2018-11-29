@@ -53,7 +53,14 @@ h3{
 }
 
 .primary {
-  color: #4a5eba !important;
+  color: #269161 !important;
+}
+
+.custom-register-container {
+  background-color:rgb(255, 255, 255); 
+  padding: 40px; 
+  margin-top: 50px;
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 /* LOGIN */
@@ -66,6 +73,13 @@ h3{
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
   transform: translateX(-50%);
+}
+
+.custom-login-container {
+  background-color:rgb(255, 255, 255); 
+  padding: 40px; 
+  width: 400px; 
+  box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
 }
 
 /* INDEX */
@@ -112,3 +126,53 @@ h3{
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 10px;
   }
+
+/* PET LIST */
+
+.list-picture{
+  height: 300px !important;
+  width: auto;
+  object-fit: cover !important;
+  z-index: 0;
+}
+
+.card-img-caption{
+  position: relative;
+  height:  300px !important;
+  max-width: 100%;
+}
+
+.text{
+  background-image: linear-gradient(to right top, #c93d3d, #d96334, #e2892f, #e3ae36, #ded24c);
+  opacity: 0.1;
+  text-align: center;
+  width: calc(100% + 48px);
+  margin: 0 -24px 0px -24px;
+  position: absolute;
+  bottom:0;
+  z-index: 1;
+  transition: 1s all;
+  cursor: pointer;
+  color: white;
+  height: 300px;
+}
+
+.text:hover{
+  opacity: 0.2;
+}
+
+.example-card {
+  padding: 24px 24px 0px 24px !important;
+}
+
+
+/* FOOTER */
+
+/* .footer{
+  position: absolute;
+  bottom: 0;
+  height: 200px;
+  width: 100%;
+  background-color: #677b6bd9;
+  margin-top: 100px;
+} */

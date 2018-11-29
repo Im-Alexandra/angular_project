@@ -9,15 +9,17 @@
       <mat-card-subtitle>{{pet.location}}</mat-card-subtitle>
       <mat-card-title>{{pet.petName}}</mat-card-title>
     </mat-card-header>
-    <img mat-card-image src={{pet.petPicture}} alt={{pet.petName}}>
-    <mat-card-content>
+    <div class="card-img-caption">
+      <div class="text"></div>
+      <img class="list-picture" mat-card-image src={{pet.petPicture}} alt={{pet.petName}}>  
+    </div>
+    <!-- <mat-card-content>
       <p>
           {{pet.description}}
       </p>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-button>LIKE</button>
-      <button mat-button>SHARE</button>
-    </mat-card-actions>
+    </mat-card-content> -->
+    <!-- <mat-card-actions>
+      
+    </mat-card-actions> -->
   </mat-card>
 </div>
