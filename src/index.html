@@ -16,6 +16,22 @@
 </head>
 <body>
   <app-root></app-root>
+
+  <!-- FIREBASE -->
+  <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+  <script>
+  // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBieiujcwXUxLy-ePgva6bXPQSiyUJzmvw",
+      authDomain: "pet-sitting-site.firebaseapp.com",
+      databaseURL: "https://pet-sitting-site.firebaseio.com",
+      projectId: "pet-sitting-site",
+      storageBucket: "",
+      messagingSenderId: "622363608380"
+    };
+      firebase.initializeApp(config);
+  </script>
+  
   <!-- BOOTSTRAP -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>

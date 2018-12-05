@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+declare var firebase : any;
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,10 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   fetchSitterData(){
-    return this.http.get('./assets/data/sitters.json');
+     return firebase.database().ref('/sitters/');
   }
 
   fetchPetData(){
-    return this.http.get('./assets/data/pets.json');
+    return this.http.get('https://pet-sitting-site.firebaseio.com/pets/.json');
   }
 }
