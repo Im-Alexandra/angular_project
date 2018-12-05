@@ -10,7 +10,13 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class RegisterComponent {
 
+  firstForm = new FormGroup({
+    
+  })
+
   secondForm = new FormGroup({
+      sitter : new FormControl (),
+      owner : new FormControl (),
       firstName : new FormControl('', [
           Validators.required,
           Validators.minLength(3)

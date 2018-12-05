@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-register-owner',
+  selector: 'register-owner',
   templateUrl: './register-owner.component.html',
   styleUrls: ['./register-owner.component.css']
 })

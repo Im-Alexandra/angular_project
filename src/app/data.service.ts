@@ -10,10 +10,10 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   fetchSitterData(){
-     return firebase.database().ref('/sitters/');
+     return this.http.get('https://pet-sitting-site-2.firebaseio.com/users.json');
   }
 
   fetchPetData(){
-    return this.http.get('https://pet-sitting-site.firebaseio.com/pets/.json');
+    return this.http.get('https://pet-sitting-site-2.firebaseio.com/pets.json');
   }
 }

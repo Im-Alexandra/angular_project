@@ -1,15 +1,24 @@
 
 
 <div class="container custom-register-container">
-    <h1 class="primary mt-5">
-        Please register
-      </h1>
-  <mat-vertical-stepper >
-      
+    <h1 class="primary mt-5">Register</h1>
+  
+    <mat-radio-group class="radio-group index-radio-button" value="1">
+      <mat-radio-button #checkIfSitter class="radio-button cool-link" value="1">Sitter</mat-radio-button>
+      <mat-radio-button #checkIfOwner class="radio-button cool-link" value="0">Owner</mat-radio-button>
+    </mat-radio-group>
+    
+    <register-owner *ngIf="checkIfOwner._checked"></register-owner>
+    <register-sitter *ngIf="checkIfSitter._checked"></register-sitter>
 
+
+
+
+
+      <!-- <mat-vertical-stepper > -->
 <!-- ------------------------------------------- FIRST STEP ------------------------------------------- -->
-    <mat-step>
-      <!-- <form [formGroup]="firstFormGroup"> -->
+    <!-- <mat-step>
+      <form [formGroup]="firstFormGroup">
         <ng-template matStepLabel>Who are you?</ng-template>
         <div>
 
@@ -23,11 +32,11 @@
           <button mat-button matStepperNext>Next</button>
         </div>
 
-      <!-- </form> -->
-    </mat-step>
+      </form>
+    </mat-step> -->
 
 <!-- ------------------------------------------- SECOND STEP ------------------------------------------- -->
-    <mat-step>
+    <!-- <mat-step>
       <form [formGroup]="secondForm" class="form-example">
         <ng-template matStepLabel>Personal information</ng-template>
 
@@ -88,7 +97,7 @@
               <input matInput formControlName="phone" placeholder="Phone">
               <span matPrefix>+45 </span>
               <mat-error *ngIf="phone.touched && phone.invalid">
-                  <!-- <mat-error *ngIf="phone.errors.minlength">This field is required.</mat-error> -->
+                  <mat-error *ngIf="phone.errors.minlength">This field is required.</mat-error>
                   <mat-error *ngIf="phone.errors.isNumber">This field has to be a number.</mat-error>
               </mat-error>
           </mat-form-field>
@@ -110,12 +119,12 @@
           <button mat-button matStepperNext>Next</button>
         </div>
       </form>
-    </mat-step>
+    </mat-step> -->
 
   <!-- ------------------------------------------- THIRD STEP ------------------------------------------- -->
     
-    <mat-step *ngIf="checkIfOwner._checked">
-        <!-- <form [formGroup]="thirdFormGroup"> -->
+    <!-- <mat-step *ngIf="checkIfOwner._checked">
+        <form [formGroup]="thirdFormGroup">
           <ng-template matStepLabel>Animals</ng-template>
           <div class="row justify-content-center">
             <mat-form-field class="col-4">
@@ -139,12 +148,12 @@
             <button mat-button matStepperPrevious>Back</button>
             <button mat-button matStepperNext>Next</button>
           </div>
-        <!-- </form> -->
-      </mat-step>
+        </form>
+      </mat-step> -->
 
     <!-- ------------------------------------------- LAST STEP ------------------------------------------- -->
 
-    <mat-step>
+    <!-- <mat-step>
       <ng-template matStepLabel>Done</ng-template>
       Now you are done, please submit.
       <div>
@@ -154,6 +163,5 @@
       </div>
     </mat-step>
   </mat-vertical-stepper>
-</div>
+</div> -->
 
-<router-outlet></router-outlet>
