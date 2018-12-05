@@ -1,21 +1,20 @@
 import { BabyRating, SitterRating } from "./rating";
+import { Pets } from "./pets";
+
 
 export class Sitter {
-  sitterId?: String;
-  email?: String;
-  birthDate?: Date;
-  gender?: String;
-  firstname?: String;
-  lastname?: String;
-  education?: String;
+  userId: String;
+  groupId: String;
+  email: String;
+  password: String;
+  firstname: String;
+  lastname: String;
+  education: String;
   picture?: String;
   avatar?: String;
   description?: String;
   location?: String;
   rating?: SitterRating[];
+  pets?: Pets[];
   phone?: String;
-
-  schedule?: any; // switch off ts-typesystem.
-
-
 }

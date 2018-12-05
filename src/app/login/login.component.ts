@@ -20,7 +20,7 @@ export class LoginComponent {
   }
 
   loginForm = new FormGroup({
-    loginUsername : new FormControl,
+    loginEmail : new FormControl,
     loginPassword : new FormControl
   });
 

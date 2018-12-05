@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomValidators } from './../../common/custom.validators';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Sitter } from 'src/app/entities/sitter';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'register-sitter',
@@ -13,7 +15,7 @@ export class RegisterSitterComponent implements OnInit {
 
 // generate random user id
   userId: string = Math.random().toString(36).substr(2, 9);
-  constructor() { }
+  constructor (private dataService : DataService) { }
 
   ngOnInit() {
     console.log(this.userId);
@@ -21,8 +23,11 @@ export class RegisterSitterComponent implements OnInit {
   }
 
   onSubmitRegister(registerSitterForm){
+    
     if (registerSitterForm.valid){
-    console.log(registerSitterForm.value)
+      let sitter = registerSitterForm.value as Sitter;
+      // console.log(registerSitterForm.value)
+      this.dataService.createSitter(sitter);
     }else{
       this.registerSitterForm.setErrors({
         invalidSitterRegister : true

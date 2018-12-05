@@ -4,7 +4,7 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm)">
   <div class="row justify-content-center">
     <mat-form-field>
-        <input matInput formControlName ="loginUsername" placeholder="Username">
+        <input matInput type="email" formControlName ="loginEmail" placeholder="Email">
         <i matSuffix class="material-icons">account_circle</i>
     </mat-form-field>
   </div>

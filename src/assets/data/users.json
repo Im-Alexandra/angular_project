@@ -1,20 +1,92 @@
-[ 
-{
-        "petId" : 1,
-        "name" : "Fluff",
-        "location" : "Copenhagen",
-        "animal" : "rabbit",
-        "userId" : 1,
-        "petPicture" : "https://m.blog.hu/cu/cukifaktor/image/4_18.jpg"
-    },{
-        "petId" : 2,
-        "name" : "Nyanko",
-        "location" : "Copenhagen",
-        "animal" : "cat",
-        "userId" : 2,
-        "petPicture" : "http://cdn.earthporm.com/wp-content/uploads/2014/11/famous-internet-cats-181.jpg"
+[
+    {
+        "sitterId": 1,
+        "groupId" : 1, 
+        "email": "sitter1@sitter.dk",
+        "password" : "1234",
+        "firstname": "Alexandra", 
+        "lastname": "Labusová", 
+        "education": "Web Development", 
+        "picture": "https://i.imgur.com/F9ChIdb.jpg",
+        "avatar": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1136253/profile/profile-512.jpg?2", 
+        "description": "I don't hurt animals!", 
+        "location": "Copenhagen", 
+        "phone": "12345678",
+        "pets" : []
+    },
+    {
+        "sitterId": 2,
+        "groupId" : 1,  
+        "email": "sitter2@sitter.dk", 
+        "password" : "1234",
+        "firstname": "Katarina", 
+        "lastname": "Kukavica", 
+        "education": "Web Development too", 
+        "picture": "https://vetstreet-brightspot.s3.amazonaws.com/5f/c7/39145be84456b7db670cde6f14f5/woman-holding-cat-thinkstockphotos-513743752jpg.jpg",
+        "avatar": "https://media.licdn.com/dms/image/C4D03AQEKgqQrMQaypg/profile-displayphoto-shrink_200_200/0?e=1545868800&v=beta&t=yOIrFEKWN5uzGzfeo3q_OfJKPeTRabDSltEStaMPWZQ", 
+        "description": "I love animals!", 
+        "location": "Copenhagen", 
+        "phone": "12345679",
+        "pets" : []
+    },
+    {
+        "sitterId": 3, 
+        "groupId" : 1, 
+        "email": "sitter3@sitter.dk", 
+        "password" : "1234",
+        "firstname": "Adam", 
+        "lastname": "Antal", 
+        "education": "Um Web Development duh", 
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSpbZo0MyfGBgiJPm6Oz_uFOlFb3chV9XOPzbxicXhl5F78hldUg",
+        "avatar": "https://miro.medium.com/fit/c/160/160/0*DiCzbqjxT4h2KR4a.", 
+        "description": "I laugh at petting dog memes!", 
+        "location": "Copenhagen", 
+        "phone": "12345679",
+        "pets" : []
+    },
+    {
+        "sitterId": 4, 
+        "groupId" : 0, 
+        "email": "sitter1@sitter.dk", 
+        "password" : "1234",
+        "firstname": "Alexandra", 
+        "lastname": "Labusova", 
+        "education": "Web Development", 
+        "picture": "https://i.imgur.com/F9ChIdb.jpg",
+        "avatar": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1136253/profile/profile-512.jpg?2", 
+        "description": "I don't hurt animals", 
+        "location": "Copenhagen", 
+        "phone": "12345678",
+        "pets" : [1,2]
+    },
+    {
+        "sitterId": 5, 
+        "groupId" : 0, 
+        "email": "sitter2@sitter.dk", 
+        "password" : "1234",
+        "firstname": "Katarina", 
+        "lastname": "Kukavica", 
+        "education": "Web Development too", 
+        "picture": "https://vetstreet-brightspot.s3.amazonaws.com/5f/c7/39145be84456b7db670cde6f14f5/woman-holding-cat-thinkstockphotos-513743752jpg.jpg",
+        "avatar": "https://media.licdn.com/dms/image/C4D03AQEKgqQrMQaypg/profile-displayphoto-shrink_200_200/0?e=1545868800&v=beta&t=yOIrFEKWN5uzGzfeo3q_OfJKPeTRabDSltEStaMPWZQ", 
+        "description": "I love animals!", 
+        "location": "Copenhagen", 
+        "phone": "12345679",
+        "pets" : [3]
+    },
+    {
+        "sitterId": 6, 
+        "groupId" : 0, 
+        "email": "sitter3@sitter.dk", 
+        "password" : "1234",
+        "firstname": "Adam", 
+        "lastname": "Antal", 
+        "education": "Um Web Development duh", 
+        "picture": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSpbZo0MyfGBgiJPm6Oz_uFOlFb3chV9XOPzbxicXhl5F78hldUg",
+        "avatar": "https://miro.medium.com/fit/c/160/160/0*DiCzbqjxT4h2KR4a.", 
+        "description": "I laugh at petting dog memes!", 
+        "location": "Copenhagen", 
+        "phone": "12345679",
+        "pets" : [4]
     }
-
-
-    
 ]
