@@ -9,9 +9,13 @@ export class DataService {
 
   constructor(private http:HttpClient) { }
 
-  fetchSitterData(){
+  fetchUserData(){
      return this.http.get('https://pet-sitting-site-2.firebaseio.com/users.json');
   }
+
+  // addUserData(){
+  //   return this.http.post('https://pet-sitting-site-2.firebaseio.com/users.json', );
+  // }
 
   fetchPetData(){
     return this.http.get('https://pet-sitting-site-2.firebaseio.com/pets.json');

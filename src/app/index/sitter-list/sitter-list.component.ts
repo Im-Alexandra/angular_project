@@ -16,7 +16,7 @@ export class SitterListComponent implements OnInit {
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-    this.dataService.fetchSitterData().subscribe(
+    this.dataService.fetchUserData().subscribe(
       (data) => this.sitters = data
     );
   }

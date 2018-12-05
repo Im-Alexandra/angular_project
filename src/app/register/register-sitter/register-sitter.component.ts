@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomValidators } from './../../common/custom.validators';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { DataService } from 'src/app/data.service';
 
 @Component({
   selector: 'register-sitter',
   templateUrl: './register-sitter.component.html',
-  styleUrls: ['./register-sitter.component.css']
+  styleUrls: ['./register-sitter.component.css'],
+  providers: [DataService]
 })
 export class RegisterSitterComponent implements OnInit {
 // hide password by default
@@ -13,7 +15,8 @@ export class RegisterSitterComponent implements OnInit {
 
 // generate random user id
   userId: string = Math.random().toString(36).substr(2, 9);
-  constructor() { }
+
+  constructor( private dataService: DataService) { }
 
   ngOnInit() {
     console.log(this.userId);

@@ -26,9 +26,11 @@ import { SitterListComponent } from './index/sitter-list/sitter-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { PetListComponent } from './index/pet-list/pet-list.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { PetComponent } from './index/pet-list/pet/pet.component';
-
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -64,7 +66,9 @@ import { PetComponent } from './index/pet-list/pet/pet.component';
     MatNativeDateModule,
     MatCardModule,
     HttpClientModule,
-    MatSidenavModule
+    MatSidenavModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
