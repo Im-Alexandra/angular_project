@@ -96,12 +96,16 @@ h3{
 }
 
 .cool-link{
-  text-decoration: none;
+  text-decoration: none !important;
   display: inline-block;
   position: relative;
   padding-bottom: 3px;
   margin-right: 10px;
-  color: #000;
+  color: rgba(39, 39, 39, 0.644) !important;
+}
+
+.cool-link:focus{
+  color:black !important;
 }
 
 .cool-link::after {

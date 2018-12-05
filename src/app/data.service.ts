@@ -25,7 +25,7 @@ export class DataService {
 
   // CREATE
   createSitter(sitter : Sitter){
-  return this.http.post('/assets/data/users.json', sitter);
+  return this.http.post('/assets/data/users.json', JSON.stringify(sitter));
 }
 }
 

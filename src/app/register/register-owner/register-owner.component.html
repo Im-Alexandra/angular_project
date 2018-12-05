@@ -1,3 +1,110 @@
-<p>
-  register-owner works!
-</p>
+<h5 class="primary mb-4 mt-3">Register as owner</h5>
+
+<form name="registerOwnerForm" [formGroup]="registerOwnerForm" (ngSubmit)="onSubmitRegister(registerOwnerForm)">
+  
+<div class="row justify-content-center">
+  <mat-form-field class="col-4">
+    <input matInput formControlName="firstname" placeholder="First name">
+    <i matSuffix class="material-icons">account_circle</i>
+    <mat-error *ngIf="firstname.touched && firstname.invalid">
+        <mat-error *ngIf="firstname.errors.required">This field is required.</mat-error>
+        <mat-error *ngIf="firstname.errors.minlength">Minimum length is {{firstname.errors.minlength.requiredLength}} characters.</mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="col-4">
+    <input matInput formControlName="lastname" placeholder="Last name">
+    <i matSuffix class="material-icons">account_circle</i>
+    <mat-error *ngIf="lastname.touched && lastname.invalid">
+        <mat-error *ngIf="lastname.errors.required">This field is required.</mat-error>
+        <mat-error *ngIf="lastname.errors.minlength">Minimum length is {{lastname.errors.minlength.requiredLength}} characters.</mat-error>
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<div class="row justify-content-center">
+  <mat-form-field class="col-4">
+    <input matInput type="email" formControlName="email" placeholder="Email">
+    <i matSuffix class="material-icons"> email </i>
+    <mat-error *ngIf="email.touched && email.invalid">
+        <mat-error *ngIf="email.errors.required">This field is required.</mat-error>
+        <mat-error *ngIf="email.errors.email">Please type in a valid email.</mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="col-4">
+    <input matInput type="password" formControlName="password" placeholder="Password" [type]="hide ? 'password' : 'text'">
+    <i matSuffix (click)="hide = !hide" class="material-icons">{{hide ? 'visibility' : 'visibility_off'}}</i>
+    <mat-error *ngIf="password.touched && password.invalid">
+        <mat-error *ngIf="password.errors.required">This field is required.</mat-error>
+        <mat-error *ngIf="password.errors.minlength">Minimum length is {{password.errors.minlength.requiredLength}} characters.</mat-error>
+    </mat-error>
+  </mat-form-field>
+</div>
+
+
+<div class="row justify-content-center">
+  <mat-form-field class="col-4">
+    <input matInput formControlName="phone" placeholder="Phone">
+    <i matSuffix class="material-icons"> phone_android </i>
+    <mat-error *ngIf="phone.touched && phone.invalid">
+        <mat-error *ngIf="phone.errors.required">This field is required.</mat-error>
+        <mat-error *ngIf="phone.errors.isNumber">This field has to be a number.</mat-error>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="col-4">
+    <input matInput formControlName="location" placeholder="Location">
+    <i matSuffix class="material-icons"> location_on </i>
+    <mat-error *ngIf="location.touched && location.invalid">
+        <mat-error *ngIf="location.errors.required">This field is required.</mat-error>
+    </mat-error>
+  </mat-form-field>
+</div>
+
+<div class="row justify-content-center">
+  <mat-form-field class="col-8">
+    <input matInput formControlName="education" placeholder="Education">
+    <i matSuffix class="material-icons"> school </i>
+    <mat-error *ngIf="education.touched && education.invalid">
+        <mat-error *ngIf="education.errors.required">This field is required.</mat-error>
+    </mat-error>
+  </mat-form-field>
+</div>
+  
+
+<div class="row justify-content-center">
+  <mat-form-field class="col-8">
+    <textarea matInput #description maxlength="200" formControlName="description" placeholder="Description" rows="10" cols="3"></textarea>
+    <i matSuffix class="material-icons"> edit </i>
+    <mat-hint align="end">{{description.value?.length || 0}}/200</mat-hint>
+  </mat-form-field>
+</div>
+
+
+<div class="row justify-content-center">
+  <mat-form-field class="col-4">
+    <input matInput formControlName="avatar" placeholder="Avatar url">
+    <i matSuffix class="material-icons">account_circle</i>
+    <mat-error *ngIf="avatar.touched && avatar.invalid">
+        <mat-error *ngIf="avatar.errors.required">This field is required.</mat-error>
+    </mat-error>
+  </mat-form-field>
+  
+  <mat-form-field class="col-4">
+    <input matInput formControlName="picture" placeholder="Picture url">
+    <i matSuffix class="material-icons">account_circle</i>
+  </mat-form-field>
+</div>
+
+
+<!-- HIDDEN INPUTS -->
+    <input matInput formControlName="userId" placeholder="id" value="" hidden>
+    <input matInput formControlName="groupId" placeholder="group id" value="0" hidden>
+    <input matInput formControlName="pets" placeholder="pets" value="[]" hidden>
+
+    <button mat-flat-button class="mt-5">Register</button>
+    <mat-error *ngIf="registerOwnerForm.errors" class="mt-3">
+        The form is invalid, please check all the fields.
+    </mat-error>
+</form>
