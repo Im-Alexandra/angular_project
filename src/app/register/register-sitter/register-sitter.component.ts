@@ -26,9 +26,12 @@ export class RegisterSitterComponent implements OnInit {
     
     if (registerSitterForm.valid){
       let sitter = registerSitterForm.value as Sitter;
-      console.log(registerSitterForm.value);
-      console.log(JSON.stringify(registerSitterForm.value));
-      this.dataService.createSitter(sitter);
+      console.log(sitter);
+      this.dataService.createSitter(sitter).subscribe(
+        (response: Response) => {
+          console.log(response);
+        }
+      );;
     }else{
       this.registerSitterForm.setErrors({
         invalidSitterRegister : true

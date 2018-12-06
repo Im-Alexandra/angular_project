@@ -34,7 +34,7 @@ export class LoginComponent {
       this.authService.login().subscribe(val=>{
         console.log(val);
         
-        this.router.navigate(['index']);
+        this.router.navigate(['profile']);
       })
     }
   }

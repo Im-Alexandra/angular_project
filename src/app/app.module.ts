@@ -28,6 +28,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { PetListComponent } from './index/pet-list/pet-list.component';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { PetComponent } from './index/pet-list/pet/pet.component';
+import { SitterComponent } from './index/sitter-list/sitter/sitter.component';
+import { MyPetsComponent } from './my-pets/my-pets.component';
+import { AddPetComponent } from './add-pet/add-pet.component';
 
 
 
@@ -43,7 +46,10 @@ import { PetComponent } from './index/pet-list/pet/pet.component';
     RegisterOwnerComponent,
     SitterListComponent,
     PetListComponent,
-    PetComponent
+    PetComponent,
+    SitterComponent,
+    MyPetsComponent,
+    AddPetComponent
   ],
   imports: [
     BrowserModule,

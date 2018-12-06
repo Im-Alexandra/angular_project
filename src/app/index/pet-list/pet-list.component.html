@@ -1,9 +1,14 @@
+<mat-radio-group class="radio-group index-radio-button" value="0">
+    <mat-radio-button #checkIfSitters class="radio-button cool-link" [routerLink]="['../sitter-list']" value="1">Sitters</mat-radio-button>
+    <mat-radio-button #checkIfPets class="radio-button cool-link" [routerLink]="['../pet-list']" value="0">Pets</mat-radio-button>
+</mat-radio-group>
+
 <h5 class="primary mb-4 mt-3">Find a pet to sit</h5>
 
 <div class="card-container">
   <mat-card class="example-card" *ngFor="let pet of pets">
     <!-- ngFor allows it to know {{pet.firstname}} etc -->
-    <mat-card-header>
+    <mat-card-header>   
       <img mat-card-avatar class="example-header-image" src="{{pet.sitterAvatar}}">
       <mat-card-title>{{pet.sitterFirstname}} {{pet.sitterLastname}}</mat-card-title>
       <mat-card-subtitle>{{pet.location}}</mat-card-subtitle>
@@ -11,7 +16,9 @@
     </mat-card-header>
     <div class="card-img-caption">
       <div class="text"></div>
-      <img class="list-picture" mat-card-image src={{pet.petPicture}} alt={{pet.petName}}>  
+      
+      <img class="list-picture" mat-card-image src={{pet.petPicture}} alt={{pet.petName}}> 
+      <a [routerLink]="['/index/pet', pet.petId]">HERE</a>
     </div>
     <!-- <mat-card-content>
       <p>

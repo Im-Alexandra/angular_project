@@ -2,7 +2,7 @@
 <mat-toolbar class="row">
 
   <div class="col-auto">
-    <button mat-button routerLink="index">
+    <button mat-button routerLink="index/pet-list">
       <i class="material-icons md-36">pets</i>
     </button>
   </div>
@@ -25,10 +25,12 @@
     <p><button (click)="sidenav.toggle()"><i class="material-icons">close</i></button></p>
     <p>
 
+    <div id="profile-pic-sidenav" class="align-center mb-4"></div>
+
       <ul>
-        <li>Edit profile</li>
-        <li>My pets</li>
-        <li>Add pet</li>
+        <li><a [routerLink]="['../profile']">Edit profile</a></li>
+        <li><a [routerLink]="['../my-pets']">My pets</a></li>
+        <li><a [routerLink]="['../add-pet']">Add pet</a></li>
       </ul>
       
   </mat-sidenav>

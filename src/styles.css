@@ -22,6 +22,18 @@ button:focus{
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
 
+/* NAVBAR + SIDEBAR */
+
+#profile-pic-sidenav{
+  height: 150px;
+  width: 150px;
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/93/Default_profile_picture_%28male%29_on_Facebook.jpg);
+  border-radius: 50%;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
+}
+
 /* REGISTER */
 
 .button-row button,
@@ -169,6 +181,18 @@ h3{
 
 .example-card {
   padding: 24px 24px 0px 24px !important;
+}
+
+/* PET */
+
+#pet-image-cicrle{
+  height: 350px;
+  width: 350px;
+  background-color: #269161;
+  border-radius: 50%;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
 }
 
 
