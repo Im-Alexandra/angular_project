@@ -13,7 +13,7 @@ export class DataService {
 
   // READ
   fetchUserData(){
-     return this.http.get('https://pet-sitting-site-2.firebaseio.com/users.json');
+     return this.http.get('/assets/data/sitters.json');
   }
 
   fetchPetData(){
@@ -22,7 +22,7 @@ export class DataService {
 
   // CREATE
   createSitter(sitter : Sitter){
-  return this.http.post('https://pet-sitting-site-2.firebaseio.com/users.json', JSON.stringify(sitter));
+  return this.http.post('../assets/data/sitters.json', JSON.stringify(sitter));
 }
 }
 
