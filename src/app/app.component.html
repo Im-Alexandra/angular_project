@@ -22,16 +22,18 @@
 <mat-sidenav-container class="example-container">
   <!-- ACTUAL SIDEBAR CONTENT -->
   <mat-sidenav class="sidebar" #sidenav mode="over" position="end">
-    <p><button (click)="sidenav.toggle()"><i class="material-icons">close</i></button></p>
+    <p><button class="close-sidenav-button" (click)="sidenav.toggle()"><i class="material-icons md24">close</i></button></p>
     <p>
 
     <div id="profile-pic-sidenav" class="align-center mb-4"></div>
 
-      <ul>
+      <ul id="side-nav-ul">
         <li><a [routerLink]="['../profile']">Edit profile</a></li>
         <li><a [routerLink]="['../my-pets']">My pets</a></li>
         <li><a [routerLink]="['../add-pet']">Add pet</a></li>
       </ul>
+
+      <button id="logout-button"><i class="material-icons md-36">exit_to_app</i></button>
       
   </mat-sidenav>
 

@@ -31,6 +31,7 @@ import { PetComponent } from './index/pet-list/pet/pet.component';
 import { SitterComponent } from './index/sitter-list/sitter/sitter.component';
 import { MyPetsComponent } from './my-pets/my-pets.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
+import { FilterPipe } from './filter.pipe';
 
 
 
@@ -49,7 +50,8 @@ import { AddPetComponent } from './add-pet/add-pet.component';
     PetComponent,
     SitterComponent,
     MyPetsComponent,
-    AddPetComponent
+    AddPetComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
