@@ -1,8 +1,9 @@
 import { FilterPipe } from './filter.pipe';
 
 describe('FilterPipe', () => {
-  it('create an instance', () => {
+  it('should return all pets if term doesnt match any animal type', () => {
     const pipe = new FilterPipe();
-    expect(pipe).toBeTruthy();
+    const result = pipe.transform( this.pets , 'rabbit');
+    expect(result).toBe("rabbit");
   });
 });

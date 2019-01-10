@@ -1,3 +1,66 @@
 <div class="container custom-register-container">
     <h1 class="primary mt-5">Add a pet</h1>
+
+    <form name="addPetForm" [formGroup]="addPetForm" (ngSubmit)="onSubmitAddPet(addPetForm)">
+  
+        <div class="row justify-content-center"> 
+          <mat-form-field class="col-4">
+            <input matInput formControlName="name" placeholder="Name">
+            <i matSuffix class="material-icons">account_circle</i>
+            <mat-error *ngIf="name.touched && name.invalid">
+                <mat-error *ngIf="name.errors.required">This field is required.</mat-error>
+                <mat-error *ngIf="name.errors.minlength">Minimum length is {{name.errors.minlength.requiredLength}} characters.</mat-error>
+            </mat-error>
+          </mat-form-field>
+        
+          <mat-form-field class="col-4">
+            <input matInput formControlName="animal" placeholder="Animal type">
+            <i matSuffix class="material-icons">account_circle</i>
+            <mat-error *ngIf="animal.touched && animal.invalid">
+                <mat-error *ngIf="animal.errors.required">This field is required.</mat-error>
+                <mat-error *ngIf="animal.errors.minlength">Minimum length is {{animal.errors.minlength.requiredLength}} characters.</mat-error>
+            </mat-error>
+          </mat-form-field>
+        </div>
+        
+        
+        <div class="row justify-content-center">
+          <mat-form-field class="col-4">
+            <input matInput formControlName="location" placeholder="Location">
+            <i matSuffix class="material-icons"> location_on </i>
+            <mat-error *ngIf="location.touched && location.invalid">
+                <mat-error *ngIf="location.errors.required">This field is required.</mat-error>
+            </mat-error>
+          </mat-form-field>
+
+          
+            <mat-form-field class="col-4">
+              <input matInput formControlName="picture" placeholder="Picture url">
+              <i matSuffix class="material-icons">account_circle</i>
+            </mat-form-field>
+          </div>
+        
+          
+        
+        <div class="row justify-content-center">
+          <mat-form-field class="col-8">
+            <textarea matInput #description maxlength="200" formControlName="description" placeholder="Description" rows="10" cols="3"></textarea>
+            <i matSuffix class="material-icons"> edit </i>
+            <mat-hint align="end">{{description.value?.length || 0}}/200</mat-hint>
+          </mat-form-field>
+        </div>
+        
+        
+        
+        
+        
+        <!-- HIDDEN INPUTS -->
+            <input matInput formControlName="userId" placeholder="id" value="" hidden>
+            <input matInput formControlName="petId" placeholder="id" value="" hidden>
+        
+            <button mat-flat-button class="mt-5">Add pet</button>
+            <mat-error *ngIf="addPetForm.errors" class="mt-3">
+                The form is invalid, please check all the fields.
+            </mat-error>
+        </form>
 </div>

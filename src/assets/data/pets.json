@@ -5,27 +5,31 @@
         "location" : "Copenhagen",
         "animal" : "rabbit",
         "userId" : 1,
-        "petPicture" : "https://m.blog.hu/cu/cukifaktor/image/4_18.jpg"
+        "petPicture" : "https://m.blog.hu/cu/cukifaktor/image/4_18.jpg",
+        "description" : "He is a fluffy fluff."
     },{
         "petId" : 2,
         "name" : "Nyanko",
         "location" : "Copenhagen",
         "animal" : "cat",
         "userId" : 2,
-        "petPicture" : "http://cdn.earthporm.com/wp-content/uploads/2014/11/famous-internet-cats-181.jpg"
+        "petPicture" : "http://cdn.earthporm.com/wp-content/uploads/2014/11/famous-internet-cats-181.jpg",
+        "description" : "The most adorable cat you will ever meet."
     },{
         "petId" : 3,
         "name" : "Robert",
         "location" : "Copenhagen",
         "animal" : "parrot",
         "userId" : 1,
-        "petPicture" : "http://region.center/source/TULA/%D0%97%D0%B0%D1%81%D1%82%20%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE/file_3.jpg"
+        "petPicture" : "http://region.center/source/TULA/%D0%97%D0%B0%D1%81%D1%82%20%D0%9F%D1%80%D0%B0%D0%B2%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D1%81%D1%82%D0%B2%D0%BE/file_3.jpg",
+        "description" : "One sleepy parrot."
     },{
         "petId" : 4,
         "name" : "Moon moon",
         "location" : "Copenhagen",
         "animal" : "dog",
         "userId" : 3,
-        "petPicture" : "https://www.meme-arsenal.com/memes/3ef349942011d37ec5108c9b6b54c345.jpg"
+        "petPicture" : "https://www.meme-arsenal.com/memes/3ef349942011d37ec5108c9b6b54c345.jpg",
+        "description" : "He is just special."
     }
 ]

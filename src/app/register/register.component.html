@@ -4,8 +4,8 @@
     <h1 class="primary mt-5">Register</h1>
   
     <mat-radio-group class="radio-group index-radio-button" value="1">
-      <mat-radio-button #checkIfSitter class="radio-button cool-link" value="1">Sitter</mat-radio-button>
-      <mat-radio-button #checkIfOwner class="radio-button cool-link" value="0">Owner</mat-radio-button>
+      <mat-radio-button #checkIfSitter class="radio-button cool-link sitters-headline" value="1">Sitter</mat-radio-button>
+      <mat-radio-button #checkIfOwner class="radio-button cool-link sitters-headline" value="0">Owner</mat-radio-button>
     </mat-radio-group>
     
     <register-owner *ngIf="checkIfOwner._checked"></register-owner>

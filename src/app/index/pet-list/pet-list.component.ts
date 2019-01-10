@@ -24,4 +24,8 @@ export class PetListComponent implements OnInit {
     );
   }
 
+  goToRoute() {
+    console.log("clicked");
+  }
+
 }
