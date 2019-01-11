@@ -14,6 +14,10 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   hide = true;
+  email = '';
+  password = '';
+  errorMessage = '';
+  error: {name: string, message: string} = {name: '', message: ''};
 
   constructor (private router: Router, private authService: AuthService) {
     // this means it gets access to router and autservice so it can be used below
@@ -36,7 +40,7 @@ export class LoginComponent {
         
         this.router.navigate(['profile']);
       })
+      }
     }
   }
 
-}

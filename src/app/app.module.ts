@@ -1,3 +1,8 @@
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { environment } from '../environments/environment';
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -36,6 +41,7 @@ import { PetFilterPipe } from './pipes/petFilter.pipe';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +58,7 @@ import { PetFilterPipe } from './pipes/petFilter.pipe';
     MyPetsComponent,
     AddPetComponent,
     PetFilterPipe
+    
   ],
   imports: [
     BrowserModule,
@@ -72,7 +79,10 @@ import { PetFilterPipe } from './pipes/petFilter.pipe';
     MatNativeDateModule,
     MatCardModule,
     HttpClientModule,
-    MatSidenavModule
+    MatSidenavModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    AngularFireAuthModule
   ],
   providers: [],
   bootstrap: [AppComponent]
