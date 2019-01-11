@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/data.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from 'src/app/common/custom.validators';
+import { User } from 'src/app/entities/user';
 
 @Component({
   selector: 'register-owner',
@@ -22,10 +23,17 @@ export class RegisterOwnerComponent implements OnInit {
 
   onSubmitRegister(registerOwnerForm){
     if(registerOwnerForm.valid){
-      console.log(registerOwnerForm.value)
+      // console.log(registerOwnerForm.value)
+      let user = registerOwnerForm.value as User;
+      console.log(user);
+      this.dataService.createUser(user).subscribe(
+        (response: Response) => {
+          console.log(response);
+        }
+      );
     }else{
       this.registerOwnerForm.setErrors({
-        invalidSitterRegister : true
+        invalidSitterRegister : true 
       })
     }
 

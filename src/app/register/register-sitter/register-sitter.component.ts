@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomValidators } from './../../common/custom.validators';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Sitter } from 'src/app/entities/sitter';
+import { User } from 'src/app/entities/user';
 import { DataService } from 'src/app/data.service';
 
 @Component({
@@ -25,9 +25,9 @@ export class RegisterSitterComponent implements OnInit {
   onSubmitRegister(registerSitterForm){
     
     if (registerSitterForm.valid){
-      let sitter = registerSitterForm.value as Sitter;
-      console.log(sitter);
-      this.dataService.createSitter(sitter).subscribe(
+      let user = registerSitterForm.value as User;
+      console.log(user);
+      this.dataService.createUser(user).subscribe(
         (response: Response) => {
           console.log(response);
         }

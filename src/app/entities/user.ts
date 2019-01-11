@@ -1,8 +1,8 @@
 import { BabyRating, SitterRating } from "./rating";
-import { Pets } from "./pets";
+import { Pet } from "./pets";
 
 
-export class Sitter {
+export class User {
   userId: String;
   groupId: String;
   email: String;
@@ -15,6 +15,6 @@ export class Sitter {
   description?: String;
   location?: String;
   rating?: SitterRating[];
-  pets?: Pets[];
+  pets?: Pet[];
   phone?: String;
 }
