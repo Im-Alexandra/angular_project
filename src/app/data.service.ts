@@ -12,12 +12,12 @@ export class DataService {
   constructor(private http:HttpClient) { }
 
   // READ
-  fetchUserData(){
-     return this.http.get('/assets/data/sitters.json');
+  getAllUsers(){
+     return this.http.get('https://pet-sitting-site-2.firebaseio.com/users.json');
   }
 
-  fetchPetData(){
-    return this.http.get('/assets/data/pets.json');
+  getAllPets(){
+    return this.http.get('https://pet-sitting-site-2.firebaseio.com/pets.json');
   }
 
   // CREATE

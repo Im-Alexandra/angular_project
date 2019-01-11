@@ -15,21 +15,21 @@
   <mat-card class="example-card" *ngFor="let pet of pets | petFilter:term">
     <!-- ngFor allows it to know {{pet.firstname}} etc -->
     <mat-card-header>   
-      <img mat-card-avatar class="example-header-image" src="{{pet.sitterAvatar}}">
+      <img mat-card-avatar class="example-header-image" src="https://i.pinimg.com/280x280_RS/16/22/13/1622137b140f144aa269b1dc1fc84fa5.jpg">
       <mat-card-title (click)="goToRoute()">{{pet.name}}</mat-card-title>
       <mat-card-subtitle>{{pet.location}}</mat-card-subtitle>
     </mat-card-header>
-    <div class="card-img-caption">
-      <div class="text"></div>
-      
-      <img (click)="goToRoute()" class="list-picture" mat-card-image src={{pet.petPicture}} alt={{pet.petName}}> 
-      
+    <img (click)="goToRoute()" class="list-picture" mat-card-image src={{pet.petPicture}} alt={{pet.petName}}>
+    <div class="filter" [routerLink]="['/index/pet', pet.petId]"></div>
+    <div class="mat-card-content">
+        <h5 class="text-left card-text-headline">About {{pet.name}}:</h5>
+        <div class="description mb-3">
+            <p class="text-left">{{pet.description}}</p>
+        </div>
+      <mat-card-actions>
+          <a class="read-more-link" [routerLink]="['/index/pet', pet.petId]"><button mat-stroked-button>Read more</button></a>
+      </mat-card-actions>
     </div>
-    <mat-card-content>
-      <p>
-          {{pet.description}}
-      </p>
-      <a [routerLink]="['/index/pet', pet.petId]">Read more</a>
-    </mat-card-content>
+    
   </mat-card>
 </div>

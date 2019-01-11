@@ -9,19 +9,25 @@ import { Component, OnInit } from '@angular/core';
   providers: [DataService]
 })
 export class SitterListComponent implements OnInit {
-  score : number = 3;
-  displayRatingScore = 4;
+  // score : number = 3;
+  // displayRatingScore = 4;
   sitters : any = [];
   
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-    const stream = this.dataService.fetchUserData()
+    const stream = this.dataService.getAllUsers()
     
     
     stream.subscribe(
-      (response) => {
-        this.sitters = response;
+      //(error) => console.log(error),
+      (response: Response) => {
+        // console.log(response);
+        //looping through what we got which is an object
+        for (let key in response){
+          let value = response[key];
+          this.sitters.push(value)
+        }
         console.log(this.sitters)
       }
     );

@@ -197,6 +197,15 @@ h3{
   }
 
 /* PET LIST */
+.example-card {
+  display: inline-block;
+  width: 300px;
+  height: auto;;
+  max-width: 300px;
+  max-height: 500px;
+  padding: 0px 24px 5px 24px !important;
+  position: relative;
+}
 
 .list-picture{
   height: 300px !important;
@@ -205,20 +214,51 @@ h3{
   z-index: 0;
 }
 
-.card-img-caption{
-  position: relative;
-  height:  300px !important;
-  max-width: 100%;
+mat-card-header mat-card-title {
+  text-align: left !important;
+  font-size: 20px !important;
+  margin: 0 !important;
 }
 
-.text{
+mat-card-header mat-card-subtitle {
+  text-align: left !important;
+  color: white !important;
+  opacity: 0.7;
+}
+
+mat-card-header.mat-card-header {
+  position: absolute;
+  color: white !important;
+  width: 100%;
+  margin-left: -24px;
+  padding: 10px;
+  background: linear-gradient(-20deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.308), rgba(0, 0, 0, 0.884));
+  z-index: 2;
+}
+
+.mat-card-avatar {
+  border: solid 2px white;
+}
+
+.mat-card-content {
+  margin-left: -19px;
+  margin-right: -19px;
+  margin-top: -10px;
+}
+
+.mat-card-content .card-text-headline {
+  font-size: 15px !important;
+  margin: 0px;
+}
+
+.filter{
   background-image: linear-gradient(to right top, #c93d3d, #d96334, #e2892f, #e3ae36, #ded24c);
   opacity: 0;
   text-align: center;
-  width: calc(100% + 48px);
+  width: 100%;
   margin: 0 -24px 0px -24px;
   position: absolute;
-  bottom:0;
+  top:0;
   z-index: 1;
   transition: 1s all;
   cursor: pointer;
@@ -226,14 +266,31 @@ h3{
   height: 300px;
 }
 
-.text:hover{
+.filter:hover{
   opacity: 0.1;
 }
 
-.example-card {
-  padding: 24px 24px 0px 24px !important;
+.mat-stroked-button {
+  position: absolute !important;
+  bottom: 0!important;
+  margin: auto !important;
+  width: 100% !important;
+  left: 0 !important;
+  border: none !important;
+  transition: all 0.4s ease-in-out;
+  color: #269161;
 }
 
+.mat-stroked-button:hover {
+  background-color: #269161;
+  color: white;
+}
+
+
+.read-more-link:hover {
+ text-decoration: none !important;
+ color: white;
+}
 /* PET */
 
 #pet-image-cicrle{

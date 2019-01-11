@@ -14,11 +14,16 @@ export class PetListComponent implements OnInit {
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
-    const stream = this.dataService.fetchPetData()
+    const stream = this.dataService.getAllPets()
     
     stream.subscribe(
-      (data) => {
-        this.pets = data;
+      (response:Response) => {
+        //console.log(response);
+        //looping through what we got which is an object
+        for (let key in response) {
+          let value = response[key];
+          this.pets.push(value)
+        }
         console.log(this.pets);
       }
     );

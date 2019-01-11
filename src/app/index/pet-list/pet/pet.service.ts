@@ -15,7 +15,7 @@ export class PetService {
 
   getPets(){
     // TODO: send the message _after_ fetching the heroes
-    return this.dataService.fetchPetData();
+    return this.dataService.getAllPets();
   }
 
   getPet(id: string) {
