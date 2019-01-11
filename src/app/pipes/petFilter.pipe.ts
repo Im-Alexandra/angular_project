@@ -3,7 +3,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 @Pipe({
   name: 'petFilter'
 })
-export class FilterPipe implements PipeTransform {
+export class PetFilterPipe implements PipeTransform {
 
   transform(pets: any, term?: any): any {
 

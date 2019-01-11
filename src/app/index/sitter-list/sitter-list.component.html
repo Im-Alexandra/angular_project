@@ -13,14 +13,16 @@
       <mat-card-title>{{sitter.firstname}} {{sitter.lastname}}</mat-card-title>
       <mat-card-subtitle>{{sitter.education}}</mat-card-subtitle>
     </mat-card-header>
-    <div class="card-img-caption">
-      <div class="text"></div>
-      <img class="list-picture" mat-card-image src={{sitter.picture}} alt="Photo of a Shiba Inu">
+    <img class="list-picture" mat-card-image src={{sitter.picture}} alt="Photo of a Shiba Inu">
+    <div class="filter" [routerLink]="['/index/sitter', sitter.sitterId]"></div>
+    <div class="mat-card-content">
+        <h5 class="text-left card-text-headline">About {{sitter.firstname}}:</h5>
+        <div class="description mb-3">
+            <p class="text-left">{{sitter.description}}</p>
+        </div>
+      <mat-card-actions>
+          <a class="read-more-link" [routerLink]="['/index/sitter', sitter.sitterId]"><button mat-stroked-button>Read more</button></a>
+      </mat-card-actions>
     </div>
-    <mat-card-content>
-      <p>
-          RATING
-      </p>
-    </mat-card-content>
   </mat-card>
 </div>

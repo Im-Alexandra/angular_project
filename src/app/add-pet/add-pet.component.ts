@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../data.service';
-import { Pet } from '../entities/pets';
+import { Pet } from '../entities/pet';
 import { Validators, FormGroup, FormControl } from '@angular/forms';
 import { CustomValidators } from '../common/custom.validators';
 

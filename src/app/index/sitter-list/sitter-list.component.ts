@@ -1,5 +1,6 @@
 import { DataService } from './../../data.service';
 import { Component, OnInit } from '@angular/core';
+import { group } from '@angular/animations';
 
 
 @Component({
@@ -11,8 +12,8 @@ import { Component, OnInit } from '@angular/core';
 export class SitterListComponent implements OnInit {
   // score : number = 3;
   // displayRatingScore = 4;
-  sitters : any = [];
-  
+  users : any = [];
+  sitters: any = [];
   constructor(private dataService:DataService) { }
 
   ngOnInit() {
@@ -24,11 +25,16 @@ export class SitterListComponent implements OnInit {
       (response: Response) => {
         // console.log(response);
         //looping through what we got which is an object
+        
         for (let key in response){
           let value = response[key];
           this.sitters.push(value)
         }
-        console.log(this.sitters)
+        // for (let key in this.sitters){
+        //   let sitter = this.sitters[key]
+        //   sitter.groupId 
+        // }
+
       }
     );
 

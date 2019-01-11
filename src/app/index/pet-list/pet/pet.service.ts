@@ -1,5 +1,5 @@
 import { DataService } from 'src/app/data.service';
-import { Pets } from './../../../entities/pets';
+import { Pet } from '../../../entities/pet';
 import { Injectable } from '@angular/core';
 
 import { Observable, of } from 'rxjs';
@@ -21,7 +21,7 @@ export class PetService {
   getPet(id: string) {
     return this.getPets().pipe(
       // (+) before `id` turns the string into a number
-      map((pets: Pets[]) => pets.find(pet => pet.petId === id))
-    );
+      map((pet: Pet[]) => pet.find(pet => pet.petId === id))
+    ); 
   }
 }

@@ -26,12 +26,12 @@ import { SitterListComponent } from './index/sitter-list/sitter-list.component';
 import { MatCardModule } from '@angular/material/card';
 import { HttpClientModule } from '@angular/common/http';
 import { PetListComponent } from './index/pet-list/pet-list.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { PetComponent } from './index/pet-list/pet/pet.component';
 import { SitterComponent } from './index/sitter-list/sitter/sitter.component';
 import { MyPetsComponent } from './my-pets/my-pets.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
-import { FilterPipe } from './filter.pipe';
+import { PetFilterPipe } from './pipes/petFilter.pipe';
 
 
 
@@ -51,7 +51,7 @@ import { FilterPipe } from './filter.pipe';
     SitterComponent,
     MyPetsComponent,
     AddPetComponent,
-    FilterPipe
+    PetFilterPipe
   ],
   imports: [
     BrowserModule,

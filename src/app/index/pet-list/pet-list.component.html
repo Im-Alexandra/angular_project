@@ -16,10 +16,10 @@
     <!-- ngFor allows it to know {{pet.firstname}} etc -->
     <mat-card-header>   
       <img mat-card-avatar class="example-header-image" src="https://i.pinimg.com/280x280_RS/16/22/13/1622137b140f144aa269b1dc1fc84fa5.jpg">
-      <mat-card-title (click)="goToRoute()">{{pet.name}}</mat-card-title>
+      <mat-card-title>{{pet.name}}</mat-card-title>
       <mat-card-subtitle>{{pet.location}}</mat-card-subtitle>
     </mat-card-header>
-    <img (click)="goToRoute()" class="list-picture" mat-card-image src={{pet.petPicture}} alt={{pet.petName}}>
+    <img class="list-picture" mat-card-image src={{pet.petPicture}} alt={{pet.petName}}>
     <div class="filter" [routerLink]="['/index/pet', pet.petId]"></div>
     <div class="mat-card-content">
         <h5 class="text-left card-text-headline">About {{pet.name}}:</h5>

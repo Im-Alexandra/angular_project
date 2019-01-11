@@ -1,4 +1,4 @@
-import { Pet } from './entities/pets';
+import { Pet } from './entities/pet';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './entities/user';
@@ -15,6 +15,13 @@ export class DataService {
   // READ
   getAllUsers(){
      return this.http.get('https://pet-sitting-site-2.firebaseio.com/users.json');
+  }
+
+  getOnlySitters(){
+    return this.getAllUsers().pipe(
+      // (+) before `id` turns the string into a number
+      map((users: User[]) => users.find(user => user.groupId === "1"))
+    ); 
   }
 
   getAllPets(){

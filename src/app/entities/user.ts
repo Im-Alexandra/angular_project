@@ -1,5 +1,5 @@
 import { BabyRating, SitterRating } from "./rating";
-import { Pet } from "./pets";
+import { Pet } from "./pet";
 
 
 export class User {
