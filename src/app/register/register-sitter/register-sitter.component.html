@@ -4,7 +4,7 @@
   
 <div class="row justify-content-center">
   <mat-form-field class="col-4">
-    <input matInput formControlName="firstname" placeholder="First name">
+    <input matInput formControlName="firstname" placeholder="First name" id="firstNameRegisterSitter">
     <i matSuffix class="material-icons">account_circle</i>
     <mat-error *ngIf="firstname.touched && firstname.invalid">
         <mat-error *ngIf="firstname.errors.required">This field is required.</mat-error>
@@ -13,7 +13,7 @@
   </mat-form-field>
 
   <mat-form-field class="col-4">
-    <input matInput formControlName="lastname" placeholder="Last name">
+    <input matInput formControlName="lastname" placeholder="Last name" id="lastNameRegisterSitter">
     <i matSuffix class="material-icons">account_circle</i>
     <mat-error *ngIf="lastname.touched && lastname.invalid">
         <mat-error *ngIf="lastname.errors.required">This field is required.</mat-error>
@@ -24,7 +24,7 @@
 
 <div class="row justify-content-center">
   <mat-form-field class="col-4">
-    <input matInput type="email" formControlName="email" placeholder="Email">
+    <input matInput type="email" formControlName="email" placeholder="Email" id="emailRegisterSitter">
     <i matSuffix class="material-icons"> email </i>
     <mat-error *ngIf="email.touched && email.invalid">
         <mat-error *ngIf="email.errors.required">This field is required.</mat-error>
@@ -33,7 +33,7 @@
   </mat-form-field>
 
   <mat-form-field class="col-4">
-    <input matInput type="password" formControlName="password" placeholder="Password" [type]="hide ? 'password' : 'text'">
+    <input matInput type="password" formControlName="password" placeholder="Password" [type]="hide ? 'password' : 'text'" id="passwordRegisterSitter">
     <i matSuffix (click)="hide = !hide" class="material-icons">{{hide ? 'visibility' : 'visibility_off'}}</i>
     <mat-error *ngIf="password.touched && password.invalid">
         <mat-error *ngIf="password.errors.required">This field is required.</mat-error>
@@ -45,7 +45,7 @@
 
 <div class="row justify-content-center">
   <mat-form-field class="col-4">
-    <input matInput formControlName="phone" placeholder="Phone">
+    <input matInput formControlName="phone" placeholder="Phone" id="phoneRegisterSitter">
     <i matSuffix class="material-icons"> phone_android </i>
     <mat-error *ngIf="phone.touched && phone.invalid">
         <mat-error *ngIf="phone.errors.required">This field is required.</mat-error>
@@ -54,7 +54,7 @@
   </mat-form-field>
 
   <mat-form-field class="col-4">
-    <input matInput formControlName="location" placeholder="Location">
+    <input matInput formControlName="location" placeholder="Location" id="locationRegisterSitter">
     <i matSuffix class="material-icons"> location_on </i>
     <mat-error *ngIf="location.touched && location.invalid">
         <mat-error *ngIf="location.errors.required">This field is required.</mat-error>
@@ -64,7 +64,7 @@
 
 <div class="row justify-content-center">
   <mat-form-field class="col-8">
-    <input matInput formControlName="education" placeholder="Education">
+    <input matInput formControlName="education" placeholder="Education" id="educationRegisterSitter">
     <i matSuffix class="material-icons"> school </i>
     <mat-error *ngIf="education.touched && education.invalid">
         <mat-error *ngIf="education.errors.required">This field is required.</mat-error>
@@ -75,7 +75,7 @@
 
 <div class="row justify-content-center">
   <mat-form-field class="col-8">
-    <textarea matInput #description maxlength="200" formControlName="description" placeholder="Description" rows="10" cols="3"></textarea>
+    <textarea matInput #description maxlength="200" formControlName="description" placeholder="Description" rows="10" cols="3" id="descriptionRegisterSitter"></textarea>
     <i matSuffix class="material-icons"> edit </i>
     <mat-hint align="end">{{description.value?.length || 0}}/200</mat-hint>
   </mat-form-field>
@@ -84,7 +84,7 @@
 
 <div class="row justify-content-center">
   <mat-form-field class="col-4">
-    <input matInput formControlName="avatar" placeholder="Avatar url">
+    <input matInput formControlName="avatar" placeholder="Avatar url" id="avatarRegisterSitter">
     <i matSuffix class="material-icons">account_circle</i>
     <mat-error *ngIf="avatar.touched && avatar.invalid">
         <mat-error *ngIf="avatar.errors.required">This field is required.</mat-error>
@@ -92,7 +92,7 @@
   </mat-form-field>
   
   <mat-form-field class="col-4">
-    <input matInput formControlName="picture" placeholder="Picture url">
+    <input matInput formControlName="picture" placeholder="Picture url" id="pictureRegisterSitter">
     <i matSuffix class="material-icons">account_circle</i>
   </mat-form-field>
 </div>
