@@ -76,7 +76,7 @@ export class RegisterSitterComponent implements OnInit {
     avatar : new FormControl('', [
       Validators.required
     ]),
-    picture : new FormControl('undefined',),
+    picture : new FormControl('',),
     userId : new FormControl(this.userId,),
     groupId : new FormControl(1,),
     pets : new FormControl('[]',)

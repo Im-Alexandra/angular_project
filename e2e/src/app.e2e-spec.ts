@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, $$  } from 'protractor';
 import { AppPage } from './app.po';
 
 // describe('workspace-project App', () => {
@@ -16,22 +16,55 @@ import { AppPage } from './app.po';
 
 describe ('register', () => {
   it("register new user and display", async()=>{
-    // go on register page
-    browser.get('register');
-    // fill out the form
-    expect(element(by.css(".sitters-headline")).click())
-    expect(element(by.id("firstNameRegisterSitter")).sendKeys('Michal'))
-    expect(element(by.id("lastNameRegisterSitter")).sendKeys('Labus'))
-    expect(element(by.id("emailRegisterSitter")).sendKeys('michal@labus.com'))
-    expect(element(by.id("passwordRegisterSitter")).sendKeys('12345'))
-    expect(element(by.id("educationRegisterSitter")).sendKeys('some'))
-    expect(element(by.id("descriptionRegisterSitter")).sendKeys('I am displayed!'))
-    expect(element(by.id("avatarRegisterSitter")).sendKeys('https://i.imgur.com/2eJfLMc.png'))
-    expect(element(by.id("pictureRegisterSitter")).sendKeys('https://i.imgur.com/hCoUhB7.png'))
-    // click register
+    // go on sitter list and count the sitters
+    browser.get('index/sitter-list');
 
-    // go to sitters page
+    $$('.example-card').then(function(sittersBefore) {
+        let sittersCountBefore = sittersBefore.length;
+        console.log("sitter count initial: " + sittersCountBefore);
+        browser.sleep(5000);
 
-    // freeze
+        // go on register page
+        browser.get('register');
+
+        // fill out the form
+        $$(".sitters-headline").click()
+        $$("#firstNameRegisterSitter").sendKeys('Michal')
+        $$("#lastNameRegisterSitter").sendKeys('Labus')
+        $$("#emailRegisterSitter").sendKeys('michal@labus.com')
+        $$("#passwordRegisterSitter").sendKeys('12345')
+        $$("#phoneRegisterSitter").sendKeys('12312312')
+        $$("#passwordRegisterSitter").sendKeys('12345')
+        $$("#locationRegisterSitter").sendKeys('Denmark')
+        $$("#educationRegisterSitter").sendKeys('some')
+        $$("#descriptionRegisterSitter").sendKeys('I am displayed!')
+        $$("#avatarRegisterSitter").sendKeys('https://i.imgur.com/2eJfLMc.png')
+        $$("#pictureRegisterSitter").sendKeys('https://i.imgur.com/hCoUhB7.png')
+
+        // click register btn
+        $$(".register-sitter-btn").click()
+
+        // click on login link
+        $$(".go-to-login").click()
+        browser.sleep(5000);
+        // fill out login form
+
+        // go to sitters page
+        browser.get('index/sitter-list');
+        browser.sleep(5000);
+        // count sitters again
+        $$('.example-card').then((sittersAfter) => { 
+        let sittersCountAfter = sittersAfter.length;
+          // Insert expect statements here..
+          // browser.sleep(3000);
+          console.log("sitter count after registering: " +sittersCountAfter);
+          console.log("sittersCountAfter - sittersCountBefore : ");
+          console.log(sittersCountAfter - sittersCountBefore);
+          expect(sittersCountAfter - sittersCountBefore).toBe(1);
+        });
+        // freeze
+        
+    });
+    
   })
 })

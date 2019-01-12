@@ -27,9 +27,11 @@ export class AuthService {
       delay(1000),
       tap(val => this.isLoggedIn = true)
     );
+
   }
 
   logout(): void {
     this.isLoggedIn = false;
+    console.log("Loggedin is " + this.isLoggedIn)
   }
 }

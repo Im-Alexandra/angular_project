@@ -103,11 +103,11 @@
     <input matInput formControlName="groupId" placeholder="group id" value="1" hidden>
     <input matInput formControlName="pets" placeholder="pets" value="[]" hidden>
 
-    <button mat-flat-button class="mt-5">Register</button>
+    <button mat-flat-button class="register-sitter-btn mt-5">Register</button>
     <mat-error *ngIf="registerSitterForm.errors" class="mt-3">
         The form is invalid, please check all the fields.
     </mat-error>
     <div class="mt-3" *ngIf="feedback">
-      <p>You have been succesfully registered. Try to <a href="login">login</a> now.</p>
+      <p>You have been succesfully registered. Try to <a class="go-to-login" href="login">login</a> now.</p>
     </div>
 </form>

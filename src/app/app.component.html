@@ -33,7 +33,7 @@
         <li><a [routerLink]="['../add-pet']">Add pet</a></li>
       </ul>
 
-      <button id="logout-button"><i class="material-icons md-36">exit_to_app</i></button>
+      <button (click)="logout()" (click)="sidenav.toggle()" id="logout-button"><i class="material-icons md-36">exit_to_app</i></button>
       
   </mat-sidenav>
 
