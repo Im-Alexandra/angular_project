@@ -37,6 +37,10 @@ import { SitterComponent } from './index/sitter-list/sitter/sitter.component';
 import { MyPetsComponent } from './my-pets/my-pets.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
 import { PetFilterPipe } from './pipes/petFilter.pipe';
+import { NgRedux, DevToolsExtension, NgReduxModule } from '@angular-redux/store';
+// import { IAppState } from './store';
+import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
+// import { rootReducer } from './store'; // Added this to get the root reducer
 
 
 
@@ -57,7 +61,9 @@ import { PetFilterPipe } from './pipes/petFilter.pipe';
     SitterComponent,
     MyPetsComponent,
     AddPetComponent,
-    PetFilterPipe
+    PetFilterPipe,
+    DevToolsExtension, 
+    NgReduxModule
     
   ],
   imports: [
@@ -82,7 +88,9 @@ import { PetFilterPipe } from './pipes/petFilter.pipe';
     MatSidenavModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    AngularFireAuthModule
+    AngularFireAuthModule,
+    NgReduxModule,   
+    NgReduxRouterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

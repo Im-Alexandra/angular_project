@@ -3,6 +3,7 @@ import { DataService } from 'src/app/data.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from 'src/app/common/custom.validators';
 import { User } from 'src/app/entities/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'register-owner',
@@ -12,10 +13,10 @@ import { User } from 'src/app/entities/user';
 export class RegisterOwnerComponent implements OnInit {
 // hide password by default
   hide = true;
-
+  feedback = false;
 // generate random user id
   userId: string = Math.random().toString(36).substr(2, 9);
-  constructor (private dataService : DataService) { }
+  constructor (private dataService : DataService, private router : Router) { }
 
   ngOnInit() {
     console.log(this.userId);
@@ -31,6 +32,9 @@ export class RegisterOwnerComponent implements OnInit {
           console.log(response);
         }
       );
+      // redirect to register feedback
+      // this.router.navigate(['register-feedback']);
+      this.feedback = true;
     }else{
       this.registerOwnerForm.setErrors({
         invalidSitterRegister : true 
