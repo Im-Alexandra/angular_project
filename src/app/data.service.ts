@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { User } from './entities/user';
 import { map } from 'rxjs/operators';
-declare var firebase : any;
 
 @Injectable({
   providedIn: 'root'

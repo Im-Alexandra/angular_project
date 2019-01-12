@@ -318,6 +318,12 @@ mat-card-header mat-card-subtitle {
   border: none !important;
   outline: none !important;
 }
+
+.toggle-sitters {
+  position: absolute;
+  right: 50px;
+  top: 153px;
+}
 /* PET */
 
 #pet-image-cicrle{

@@ -5,8 +5,15 @@
 
 <h5 class="primary mb-4 mt-3">Find a sitter for you</h5>
 
+<form id="search-filter">
+  <input type="text" [(ngModel)]="term" name="term"/>
+  <label><i class="fas fa-search"></i></label>
+</form>
+
+<mat-slide-toggle class="toggle-sitters" (click)=filterUsers()>Only sitters</mat-slide-toggle>
+
 <div class="card-container">
-  <mat-card class="example-card" *ngFor="let sitter of sitters">
+  <mat-card class="example-card" *ngFor="let sitter of sitters | userFilter:term">
     <!-- ngFor allows it to know {{sitter.firstname}} etc -->
     <mat-card-header>
       <img mat-card-avatar class="example-header-image" src="{{sitter.avatar}}">

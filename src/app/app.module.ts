@@ -36,13 +36,15 @@ import { PetComponent } from './index/pet-list/pet/pet.component';
 import { SitterComponent } from './index/sitter-list/sitter/sitter.component';
 import { MyPetsComponent } from './my-pets/my-pets.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
-import { PetFilterPipe } from './pipes/petFilter.pipe';
+import { PetFilterPipe } from './pipes/pet-filter.pipe';
+import { UserFilterPipe } from './pipes/user-filter.pipe';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 // import { NgRedux, NgReduxModule } from '@angular-redux/store';
 // import { IAppState } from './store';
 // import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
 // import { rootReducer } from './store'; // Added this to get the root reducer
-import { rootReducer, IAppState } from './store/index';
-import { NgRedux, DevToolsExtension, NgReduxModule } from '@angular-redux/store';
+// import { rootReducer, IAppState } from './store/index';
+// import { NgRedux, DevToolsExtension, NgReduxModule } from '@angular-redux/store';
 
 
 
@@ -63,7 +65,8 @@ import { NgRedux, DevToolsExtension, NgReduxModule } from '@angular-redux/store'
     SitterComponent,
     MyPetsComponent,
     AddPetComponent,
-    PetFilterPipe
+    PetFilterPipe,
+    UserFilterPipe
     
   ],
   imports: [
@@ -89,24 +92,11 @@ import { NgRedux, DevToolsExtension, NgReduxModule } from '@angular-redux/store'
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    NgReduxModule,   
+    MatSlideToggleModule
+    // NgReduxModule,   
     // NgReduxRouterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  constructor(
-    private ngRedux: NgRedux<IAppState>,
-    private devTool: DevToolsExtension
-  ) {
-
-    this.ngRedux.configureStore(
-      rootReducer,
-      {} as IAppState,
-      [ ],
-      [ devTool.isEnabled() ? devTool.enhancer() : f => f]
-    );
-
-  }
-}
+export class AppModule {}
