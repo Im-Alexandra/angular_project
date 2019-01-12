@@ -1,20 +1,27 @@
 import { DataService } from './../../data.service';
 import { Component, OnInit } from '@angular/core';
 import { group } from '@angular/animations';
-
+import { UsersActions } from './../../actions/users.actions';
+import { select } from '@angular-redux/store';
+import { Observable } from 'rxjs';
+import { Users } from 'src/app/entities/user';
 
 @Component({
   selector: 'sitter-list',
   templateUrl: './sitter-list.component.html',
   styleUrls: ['./sitter-list.component.css'],
-  providers: [DataService]
+  providers: [DataService, UsersActions]
 })
 export class SitterListComponent implements OnInit {
-  // score : number = 3;
-  // displayRatingScore = 4;
+
   users : any = [];
   sitters: any = [];
-  constructor(private dataService:DataService) { }
+  // @select('users') public users$: Observable<Users>;
+  constructor(private dataService:DataService, 
+    // public actions: UsersActions
+    ) { 
+    // actions.getUsers();
+  }
 
   ngOnInit() {
     const stream = this.dataService.getAllUsers()

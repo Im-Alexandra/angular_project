@@ -6,3 +6,7 @@ export class Pet {
     location: String;
     petPicture: String;
 }
+
+export class Pets {
+    list: Pet[];
+}

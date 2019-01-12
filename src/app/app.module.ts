@@ -37,10 +37,12 @@ import { SitterComponent } from './index/sitter-list/sitter/sitter.component';
 import { MyPetsComponent } from './my-pets/my-pets.component';
 import { AddPetComponent } from './add-pet/add-pet.component';
 import { PetFilterPipe } from './pipes/petFilter.pipe';
-import { NgRedux, DevToolsExtension, NgReduxModule } from '@angular-redux/store';
+// import { NgRedux, NgReduxModule } from '@angular-redux/store';
 // import { IAppState } from './store';
-import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
+// import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
 // import { rootReducer } from './store'; // Added this to get the root reducer
+import { rootReducer, IAppState } from './store/index';
+import { NgRedux, DevToolsExtension, NgReduxModule } from '@angular-redux/store';
 
 
 
@@ -61,9 +63,7 @@ import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
     SitterComponent,
     MyPetsComponent,
     AddPetComponent,
-    PetFilterPipe,
-    DevToolsExtension, 
-    NgReduxModule
+    PetFilterPipe
     
   ],
   imports: [
@@ -90,9 +90,23 @@ import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
     AngularFirestoreModule,
     AngularFireAuthModule,
     NgReduxModule,   
-    NgReduxRouterModule.forRoot()
+    // NgReduxRouterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  constructor(
+    private ngRedux: NgRedux<IAppState>,
+    private devTool: DevToolsExtension
+  ) {
+
+    this.ngRedux.configureStore(
+      rootReducer,
+      {} as IAppState,
+      [ ],
+      [ devTool.isEnabled() ? devTool.enhancer() : f => f]
+    );
+
+  }
+}

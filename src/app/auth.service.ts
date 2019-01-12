@@ -27,7 +27,6 @@ export class AuthService {
       delay(1000),
       tap(val => this.isLoggedIn = true)
     );
-    
   }
 
   logout(): void {

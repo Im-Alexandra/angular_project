@@ -15,6 +15,12 @@ export class User {
   description?: String;
   location?: String;
   rating?: SitterRating[];
-  pets?: Pet[];
+  pets?: String[];
+  // ["id as string", "id as string"]
   phone?: String;
+}
+
+
+export class Users {
+  list: User[];
 }
