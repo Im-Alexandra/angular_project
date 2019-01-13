@@ -336,6 +336,17 @@ mat-card-header mat-card-subtitle {
   background-position: center;
 }
 
+.go-back-icon {
+  position: absolute;
+  left: 30px;
+  top: 20px;
+  cursor: pointer;
+}
+
+.relative-position{
+  position: relative;
+}
+
 
 /* FOOTER */
 
