@@ -23,14 +23,12 @@ export class PetListComponent implements OnInit {
         for (let key in response) {
           let value = response[key];
           this.pets.push(value)
+          // save them to local storage
+          localStorage.setItem('pets', JSON.stringify(this.pets)); 
         }
         console.log(this.pets);
       }
     );
-  }
-
-  goToRoute() {
-    console.log("clicked");
   }
 
 }

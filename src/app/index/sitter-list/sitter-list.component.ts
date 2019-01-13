@@ -24,6 +24,7 @@ export class SitterListComponent implements OnInit {
         for (let key in response){
           let value = response[key];
           this.sitters.push(value)
+          // save them to local storage
           localStorage.setItem('users', JSON.stringify(this.sitters)); 
         }
 

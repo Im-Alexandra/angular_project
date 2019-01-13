@@ -1,28 +1,21 @@
-<div class="container custom-register-container relative-position">
+<div *ngFor="let value of pet" class="container custom-register-container relative-position">
 
   <i [routerLink]="['/index/pet-list']" class="material-icons md-48 go-back-icon">keyboard_backspace</i>
 
-  <div id="pet-image-cicrle" class="align-center mt-4" style="background-image: url(https://m.blog.hu/cu/cukifaktor/image/4_18.jpg)"></div>
+  <div id="pet-image-cicrle" class="align-center mt-4" [style.background-image]="'url(' + petPicture + ')'"></div>
   
-  <h2 class="mt-4">Fluff</h2>
+ 
     <div class="row mt-4">
-      <div class="col-6">
-        <h4 class="align-center">Owner info</h4>
-        <ul>
-          <li>Owner first name</li>
-          <li>Owner last name</li>
-          <li>Location</li>
-          <li>Email</li>
-          <li>Phone</li>
-        </ul>
+      <div class="col-4">
+          <h4 class="align-left mt-3">Pet info</h4>
+          <h5>Location:</h5>
+          <p>{{value.location}}</p>
+          <h5>Animal:</h5>
+          <p>{{value.animal}}</p>
       </div>
-      <div class="col-6">
-          <h4 class="align-center" (click)="getPet()">Pet info</h4>
-          <ul>
-              <li>Animal</li>
-              <li>Location</li>
-              <li>Description</li>
-            </ul>
+      <div class="col-8 text-left">
+          <h2 class="text-left">About {{value.name}}:</h2>
+          <p style="text-indent: 50px;">{{value.description}}</p> 
       </div>
     </div>
 </div>

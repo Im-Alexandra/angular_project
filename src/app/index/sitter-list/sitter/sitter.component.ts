@@ -17,23 +17,25 @@ export class SitterComponent implements OnInit {
   users:any;
   id:string;
   user: User;
+  avatarUrl :any;
+  pictureUrl :any;
 
   ngOnInit() {
 
     this.route.params.subscribe(params => {
     this.id = params["id"];
-    console.log(this.id);
+    // console.log(this.id);
     
     this.users = JSON.parse(localStorage.getItem("users"));
-    console.log(this.users)
+    // console.log(this.users)
 
     this.user = this.users.filter(obj => {
       return obj.userId === this.id
     })
     console.log(this.user)
-
-  })
-  
-}
+    this.avatarUrl = this.user[0].avatar;
+    this.pictureUrl = this.user[0].picture;
+    })
+  }
 
 }

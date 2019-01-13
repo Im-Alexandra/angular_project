@@ -1,9 +1,9 @@
 <div *ngFor="let value of user" class="container custom-register-container relative-position">
-  <div id="user-background-img"></div>
+  <div id="user-background-img" [style.background-image]="'url(' + pictureUrl + ')'"></div>
 
   <i [routerLink]="['/index/sitter-list']" class="material-icons md-48 go-back-icon white">keyboard_backspace</i>
 
-  <div id="user-profile-img"></div>
+  <div id="user-profile-img" [style.background-image]="'url(' + avatarUrl + ')'"></div>
 
   <div class="row">
     <div class="col-4 left-column">
