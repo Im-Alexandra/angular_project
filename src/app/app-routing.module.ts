@@ -32,7 +32,8 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
   {path: 'my-pets', component: MyPetsComponent, canActivate: [AuthGuard]},
-  {path: 'add-pet', component: AddPetComponent, canActivate: [AuthGuard]}
+  {path: 'add-pet', component: AddPetComponent, canActivate: [AuthGuard]},
+  // { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-<div class="container custom-register-container relative-position">
+<div *ngFor="let value of user" class="container custom-register-container relative-position">
   <div id="user-background-img"></div>
 
   <i [routerLink]="['/index/sitter-list']" class="material-icons md-48 go-back-icon white">keyboard_backspace</i>
@@ -8,19 +8,19 @@
   <div class="row">
     <div class="col-4 left-column">
       <h5>Location:</h5>
-      <p>Copenhagen</p>
+      <p>{{value.location}}</p>
       <h5>Education:</h5>
-      <p>Web development KEA</p>
+      <p>{{value.education}}</p>
       <h5>Phone:</h5>
-      <p>+45 12121212</p>
+      <p>{{value.phone}}</p>
       <h5>Email:</h5>
-      <p>katarina@kukavica.com</p>
+      <p>{{value.phone}}</p> 
 
     </div>
 
     <div class="col-8 text-left mt-4 right-column">
-      <h2>Katarina Kukavica</h2>
-      <h5>About Katarina:</h5>
+      <h2>{{value.firstname}} {{value.lastname}}</h2>
+      <h5>About {{value.firstname}}:</h5>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam feugiat pretium augue, in elementum lacus accumsan malesuada. Nullam a sem semper, vestibulum risus vel, tincidunt enim. Sed nibh ex, convallis quis massa vitae, volutpat blandit eros. Maecenas tincidunt lorem non leo sodales facilisis. Duis lectus massa, fringilla eget tellus eget, rutrum fringilla turpis. Aliquam mattis odio vitae est interdum fermentum a non libero. Proin nec dui semper, fringilla urna eu, fringilla nulla. Praesent sollicitudin enim et justo porttitor, eget tincidunt metus tempus.</p>
       <p>In et arcu lacinia sem feugiat suscipit hendrerit in sapien. In bibendum mollis feugiat. Sed lobortis, augue et vehicula finibus, elit eros tempus metus, ac lacinia arcu sapien ut justo. Donec laoreet ultricies tellus, quis ultricies enim dictum ut. Nunc turpis arcu, malesuada eget massa vitae, ultricies aliquet lacus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer ac interdum tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Proin in ipsum ac risus dignissim lacinia vel a nisl. Integer augue massa, pharetra quis nisi laoreet, pharetra venenatis ipsum. Mauris posuere semper malesuada. Phasellus laoreet lacus diam, in egestas ipsum fringilla sed. Vivamus tempus maximus mi, pharetra pharetra leo fermentum vitae.</p>
     </div>
