@@ -29,6 +29,7 @@
     <mat-error *ngIf="email.touched && email.invalid">
         <mat-error *ngIf="email.errors.required">This field is required.</mat-error>
         <mat-error *ngIf="email.errors.email">Please type in a valid email.</mat-error>
+        <mat-error *ngIf="email.errors.cannotContainSpace">Email cant contain spaces.</mat-error>
     </mat-error>
   </mat-form-field>
 

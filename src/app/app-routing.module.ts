@@ -16,9 +16,9 @@ const routes: Routes = [
   {path:'', redirectTo:'index/pet-list', pathMatch:'full'},
   {path:'index', component: IndexComponent, children: [
     {path : 'sitter-list', component: SitterListComponent},
-    {path: 'sitter/:id', component: SitterComponent},
+    {path: 'sitter/:id', component: SitterComponent, canActivate: [AuthGuard]},
     {path : 'pet-list', component: PetListComponent},
-    {path : 'pet/:id', component: PetComponent}
+    {path : 'pet/:id', component: PetComponent, canActivate: [AuthGuard]}
     
   ]},
   // {path: 'portal', component: PortalComponent, canActivate: [AuthGuard], children: [
@@ -26,9 +26,9 @@ const routes: Routes = [
   // ]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'profile', component: ProfileComponent},
-  {path: 'my-pets', component: MyPetsComponent},
-  {path: 'add-pet', component: AddPetComponent}
+  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path: 'my-pets', component: MyPetsComponent, canActivate: [AuthGuard]},
+  {path: 'add-pet', component: AddPetComponent, canActivate: [AuthGuard]}
 ];
 
 @NgModule({

@@ -17,7 +17,7 @@ export class RegisterSitterComponent implements OnInit {
 
 // generate random user id
   userId: string = Math.random().toString(36).substr(2, 9);
-  constructor (private dataService : DataService, private router : Router) { }
+  constructor (private dataService : DataService) { }
 
   ngOnInit() {
     console.log(this.userId);
@@ -56,7 +56,8 @@ export class RegisterSitterComponent implements OnInit {
     ]),
     email : new FormControl('', [
       Validators.required,
-      Validators.email
+      Validators.email,
+      CustomValidators.cannotContainSpace
     ]),
     password : new FormControl('', [
       Validators.required,

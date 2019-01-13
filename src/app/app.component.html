@@ -10,7 +10,7 @@
   <div class="col-auto ml-auto">
     <button mat-button routerLink="login">Login</button>
     <button mat-button routerLink="register">Register</button>
-    <button mat-button (click)="sidenav.toggle()">
+    <button mat-button *ngIf="isLoggedIn$ | async" (click)="sidenav.toggle()">
       <i class="material-icons md-36">account_circle</i>
     </button>
   </div>
@@ -35,7 +35,7 @@
 
       <button (click)="logout()" (click)="sidenav.toggle()" id="logout-button"><i class="material-icons md-36">exit_to_app</i></button>
       
-  </mat-sidenav>
+  </mat-sidenav> 
 
   <!-- WEBPAGE CONTENT -->
   <mat-sidenav-content>

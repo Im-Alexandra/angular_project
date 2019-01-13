@@ -2,7 +2,7 @@ import { DataService } from 'src/app/data.service';
 import { Routes } from '@angular/router';
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { Observable, of, BehaviorSubject } from 'rxjs';
 import { tap, delay, map } from 'rxjs/operators';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { stringify } from 'querystring';
@@ -14,7 +14,7 @@ import { User } from 'firebase';
 })
 export class AuthService {
   [x: string]: any;
-  isLoggedIn = false;
+  isLoggedIn = new BehaviorSubject<boolean>(false)
 
   // store the URL so we can redirect after logging in
   redirectUrl: string;
@@ -25,13 +25,13 @@ export class AuthService {
   login(): Observable<boolean> {
     return of(true).pipe(
       delay(1000),
-      tap(val => this.isLoggedIn = true)
+      tap(val => this.isLoggedIn.next(true))
     );
 
   }
 
   logout(): void {
-    this.isLoggedIn = false;
+    this.isLoggedIn.next(false);
     console.log("Loggedin is " + this.isLoggedIn)
   }
 }
