@@ -12,7 +12,10 @@ export class PetFilterPipe implements PipeTransform {
 
     // return updated pets array
     return pets.filter(function(pet:any){
-      return pet.animal.toLowerCase().includes(term.toLowerCase())});
+      return pet.animal.toLowerCase().includes(term.toLowerCase()) ||
+      pet.location.toLowerCase().includes(term.toLowerCase()) ||
+      pet.name.toLowerCase().includes(term.toLowerCase())
+    });
   }
 
 }

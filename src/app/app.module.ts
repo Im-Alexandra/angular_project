@@ -39,6 +39,7 @@ import { AddPetComponent } from './add-pet/add-pet.component';
 import { PetFilterPipe } from './pipes/pet-filter.pipe';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { DefaultPicturePipe } from './pipes/default-picture.pipe';
 // import { NgRedux, NgReduxModule } from '@angular-redux/store';
 // import { IAppState } from './store';
 // import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
@@ -66,7 +67,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MyPetsComponent,
     AddPetComponent,
     PetFilterPipe,
-    UserFilterPipe
+    UserFilterPipe,
+    DefaultPicturePipe
     
   ],
   imports: [

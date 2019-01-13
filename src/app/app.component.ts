@@ -13,6 +13,7 @@ export class AppComponent implements OnInit {
   constructor (private authService : AuthService, private router: Router,){
   }
   isLoggedIn$: Observable<boolean>;
+  avatar = "https://i.imgur.com/RPVaqNE.jpg";
 
   ngOnInit() {
     this.isLoggedIn$ = this.authService.isLoggedIn; // {2}

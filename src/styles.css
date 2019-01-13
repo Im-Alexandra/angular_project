@@ -347,6 +347,43 @@ mat-card-header mat-card-subtitle {
   position: relative;
 }
 
+/* USER */
+#user-background-img{
+  background-image: url("https://img.maximummedia.ie/her_ie/eyJkYXRhIjoie1widXJsXCI6XCJodHRwOlxcXC9cXFwvbWVkaWEtaGVyLm1heGltdW1tZWRpYS5pZS5zMy5hbWF6b25hd3MuY29tXFxcL3dwLWNvbnRlbnRcXFwvdXBsb2Fkc1xcXC8yMDE4XFxcLzA5XFxcLzIzMTAwMTM2XFxcL2lTdG9jay01MzIyNjIyMDItMS5qcGdcIixcIndpZHRoXCI6NzY3LFwiaGVpZ2h0XCI6NDMxLFwiZGVmYXVsdFwiOlwiaHR0cHM6XFxcL1xcXC93d3cuaGVyLmllXFxcL2Fzc2V0c1xcXC9pbWFnZXNcXFwvaGVyXFxcL25vLWltYWdlLnBuZz92PTVcIixcIm9wdGlvbnNcIjpbXX0iLCJoYXNoIjoiZmIyOWZmNzNkNWY5NGJkNzZiNzUyZGRiOWMwOTljODE0NWI0OWQ4NCJ9/istock-532262202-1.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100% + 44px;
+  height: 330px;
+  margin-left: -40px;
+  margin-right: -40px;
+  margin-top: -40px;
+}
+
+.white {
+  color: white;
+}
+
+#user-profile-img {
+  background-image: url("https://i.imgur.com/Gmk1Wz6.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  border: solid 5px white;
+  position: absolute;
+  top: 200px;
+}
+
+.right-column p{
+  text-indent: 50px;
+}
+
+.left-column {
+  margin-top: 150px;
+  text-align: left;
+}
+
 
 /* FOOTER */
 

@@ -13,6 +13,7 @@ export class AddPetComponent implements OnInit {
 
 // generate random pet id
 petId: string = Math.random().toString(36).substr(2, 9);
+feedback=false;
 constructor (private dataService : DataService) { }
 
 ngOnInit() {
@@ -24,6 +25,7 @@ ngOnInit() {
     if (addPetForm.valid){
       let pet = addPetForm.value as Pet;
       console.log(pet);
+      this.feedback=true;
       this.dataService.createPet(pet).subscribe(
         (response: Response) => {
           console.log(response);
