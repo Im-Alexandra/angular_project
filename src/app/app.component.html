@@ -25,13 +25,15 @@
     <p><button class="close-sidenav-button" (click)="sidenav.toggle()"><i class="material-icons md24">close</i></button></p>
     <p>
 
-    <div id="profile-pic-sidenav" class="align-center mb-4"></div>
+    <div id="profile-pic-sidenav" class="align-center mb-4" [style.background-image]="'url(' + avatar + ')'"></div>
 
       <ul id="side-nav-ul">
         <li><a [routerLink]="['../profile']">Edit profile</a></li>
         <li><a [routerLink]="['../my-pets']">My pets</a></li>
         <li><a [routerLink]="['../add-pet']">Add pet</a></li>
       </ul>
+
+      <p id="mini-counter">Counter: {{counter | async}}</p>
 
       <button (click)="logout()" (click)="sidenav.toggle()" id="logout-button"><i class="material-icons md-36">exit_to_app</i></button>
       

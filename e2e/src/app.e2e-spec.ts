@@ -14,8 +14,8 @@ import { AppPage } from './app.po';
 //   });
 // });
 
-describe ('register', () => {
-  it("register new user and display", async()=>{
+describe ('register and login', () => {
+  it("register new user, login and display", async()=>{
     // go on sitter list and count the sitters
     browser.get('index/sitter-list');
 
@@ -48,6 +48,10 @@ describe ('register', () => {
         $$(".go-to-login").click()
         browser.sleep(5000);
         // fill out login form
+        $$("#loginEmail").sendKeys('michal@labus.com')
+        $$("#loginPassword").sendKeys('12345')
+        // click login
+        $$("#login-btn").click()
 
         // go to sitters page
         browser.get('index/sitter-list');

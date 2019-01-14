@@ -16,6 +16,14 @@ export class DataService {
      return this.http.get('https://pet-sitting-site-2.firebaseio.com/users.json');
   }
 
+  editUser(key, user: User) {
+    return this.http.put("https://pet-sitting-site-2.firebaseio.com/users/"+key+".json", user);
+  }
+
+  deleteUser(key) {
+    return this.http.delete("https://pet-sitting-site-2.firebaseio.com/users/"+key+".json")
+  }
+
   getOnlySitters(){
     return this.getAllUsers().pipe(
       // (+) before `id` turns the string into a number

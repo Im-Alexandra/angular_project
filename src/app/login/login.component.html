@@ -4,13 +4,13 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin(loginForm)">
   <div class="row justify-content-center">
     <mat-form-field>
-        <input matInput type="email" formControlName ="loginEmail" placeholder="Email">
+        <input matInput type="email" formControlName ="loginEmail" placeholder="Email" id="loginEmail">
         <i matSuffix class="material-icons">account_circle</i>
     </mat-form-field>
   </div>
   <div class="row justify-content-center">
     <mat-form-field>
-        <input matInput formControlName ="loginPassword" placeholder="Enter your password" [type]="hide ? 'password' : 'text'">
+        <input matInput formControlName ="loginPassword" placeholder="Enter your password" [type]="hide ? 'password' : 'text'" id="loginPassword">
         <i matSuffix (click)="hide = !hide" class="material-icons">{{hide ? 'visibility' : 'visibility_off'}}</i>
     </mat-form-field>
   </div>

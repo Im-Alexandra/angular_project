@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~@angular/material/prebuilt-themes/indigo-pink.css"; /*importing a prebuilt theme*/
+/* @import "~@angular/material/prebuilt-themes/indigo-pink.css"; importing a prebuilt theme */
 
 /* ALL */
 html, body { height: 100%; }
@@ -21,6 +21,14 @@ button:focus{
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+
+.mat-flat-button {
+  background-color: #269161 !important;
+}
+
+.red {
+  background-color: #b61e1e !important;
+}
 
 /* NAVBAR + SIDEBAR */
 
@@ -384,6 +392,38 @@ mat-card-header mat-card-subtitle {
   text-align: left;
 }
 
+/* PROFILE */
+
+#profile-pic-profile{
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+#editProfileFrm input {
+  margin-left: 10px;
+}
+
+#editProfileFrm textarea {
+  margin-left: 10px;
+}
+
+#editProfileBtn {
+  background-color: transparent !important;
+  color: #26916F !important;
+  font-size: 40px;
+  position: absolute;
+  top: -100px;
+  right: 20px;
+}
+
+#mini-counter {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+}
 
 /* FOOTER */
 

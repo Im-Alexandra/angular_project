@@ -1,3 +1,52 @@
-<div class="container custom-register-container">
-    <h1 class="primary mt-5">Profile</h1>
+<div *ngFor="let value of user" class="container custom-register-container">
+    <h1 class="primary mt-5">Edit profile</h1>
+    <div class="row">
+        <div class="col-4">
+            <div id="profile-pic-profile" [style.background-image]="'url(' + userAvatarUrl + ')'"></div>
+            <button mat-flat-button class="red mt-4" type="button" (click)="deleteProfile()">Delete profile</button>
+        </div>
+        <div class="col-8 text-left">
+            <form name="editProfileFrm" id="editProfileFrm" [formGroup]="editProfileFrm" (ngSubmit)="onSubmit(editProfileFrm)">
+                <h2>General info:</h2>
+
+                <div class="row">
+                    <label>First name: </label>
+                    <input name="firstnameEditProfileFrm" formControlName="firstnameEditProfileFrm" id="firstnameEditProfileFrm" placeholder="{{value.firstname}}">
+                </div>
+
+                <div class="row">
+                    <label>Last name: </label>
+                    <input name="lastnameEditProfileFrm" formControlName="lastnameEditProfileFrm" id="lastnameEditProfileFrm" placeholder="{{value.lastname}}">
+                </div>
+
+                <!-- <div class="row">
+                    <label>Email: </label>
+                    <input name="emailEditProfileFrm" formControlName="emailEditProfileFrm" id="emailEditProfileFrm" placeholder="{{value.email}}">
+                </div>
+
+                <div class="row">
+                    <label>Password: </label>
+                    <input name="passwordEditProfileFrm" formControlName="passwordEditProfileFrm" id="passwordEditProfileFrm" placeholder="{{value.password}}">
+                </div>
+
+                <h2 class="mt-4">Description:</h2>
+                <div class="row">
+                    <label>About me: </label>
+                    <textarea name="descriptionEditProfileFrm" formControlName="descriptionEditProfileFrm" id="descriptionEditProfileFrm" placeholder="{{value.description}}"></textarea>
+                </div> -->
+
+                <!-- <input name="educationEditProfileFrm" formControlName="educationEditProfileFrm" id="educationEditProfileFrm" placeholder="{{value.education}}" hidden value="{{value.education}}">
+                <input name="locationEditProfileFrm" formControlName="locationEditProfileFrm" id="locationEditProfileFrm" placeholder="{{value.location}}" hidden value="{{value.location}}">
+                <input name="phoneEditProfileFrm" formControlName="phoneEditProfileFrm" id="phoneEditProfileFrm" placeholder="{{value.phone}}" hidden value="{{value.phone}}">
+                <input name="petsEditProfileFrm" formControlName="petsEditProfileFrm" id="petsEditProfileFrm" placeholder="{{value.pets}}" hidden value="{{value.pets}}">
+                <input name="pictureEditProfileFrm" formControlName="pictureEditProfileFrm" id="pictureEditProfileFrm" placeholder="{{value.picture}}" hidden value="{{value.picture}}">
+                <input name="avatarEditProfileFrm" formControlName="avatarEditProfileFrm" id="avatarEditProfileFrm" placeholder="{{value.avatar}}" hidden value="{{value.avatar}}">
+                <input name="groupIdEditProfileFrm" formControlName="groupIdEditProfileFrm" id="groupIdEditProfileFrm" placeholder="{{value.groupId}}" hidden value="{{value.groupId}}">
+                <input name="userIdEditProfileFrm" formControlName="userIdEditProfileFrm" id="userIdEditProfileFrm" placeholder="{{value.userId}}" hidden value="{{value.userId}}"> -->
+
+                <button mat-flat-button class="mt-5" type="submit" id="editProfileBtn"><i class="far fa-save"></i></button>
+            </form>
+            
+        </div>
+    </div>
 </div>

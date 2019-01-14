@@ -40,12 +40,14 @@ import { PetFilterPipe } from './pipes/pet-filter.pipe';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { DefaultPicturePipe } from './pipes/default-picture.pipe';
-// import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { NgRedux, NgReduxModule } from '@angular-redux/store';
 // import { IAppState } from './store';
 // import { NgReduxRouter, NgReduxRouterModule } from '@angular-redux/router';
 // import { rootReducer } from './store'; // Added this to get the root reducer
-// import { rootReducer, IAppState } from './store/index';
+import { rootReducer, IAppState, INITIAL_STATE } from './store/index';
 // import { NgRedux, DevToolsExtension, NgReduxModule } from '@angular-redux/store';
+// import { NgRedux, NgReduxModule } from 'ng2-redux';
+
 
 
 
@@ -94,11 +96,16 @@ import { DefaultPicturePipe } from './pipes/default-picture.pipe';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     AngularFireAuthModule,
-    MatSlideToggleModule
-    // NgReduxModule,   
+    MatSlideToggleModule,
+    NgReduxModule   
     // NgReduxRouterModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule {
+  constructor(ngRedux: NgRedux<IAppState>){
+    // this initialises store, 2nd argument is the initial store
+    ngRedux.configureStore(rootReducer, INITIAL_STATE);
+  }
+}

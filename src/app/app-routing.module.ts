@@ -25,13 +25,14 @@ const routes: Routes = [
   }
     
   ]},
-  // {path: 'portal', component: PortalComponent, canActivate: [AuthGuard], children: [
-  //   {path: 'find-a-sitter', component: SitterListComponent}
-  // ]},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
-  {path: 'profile', component: ProfileComponent, canActivate: [AuthGuard]},
-  {path: 'my-pets', component: MyPetsComponent, canActivate: [AuthGuard]},
+  {path: 'profile', component: ProfileComponent, 
+  // canActivate: [AuthGuard]
+},
+  {path: 'my-pets', component: MyPetsComponent, 
+  // canActivate: [AuthGuard]
+},
   {path: 'add-pet', component: AddPetComponent, canActivate: [AuthGuard]},
   // { path: '**', component: PageNotFoundComponent }
 ];
